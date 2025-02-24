@@ -32,6 +32,7 @@
     .navbar-brand img {
         height: 40px;
         width: auto;
+        border-radius: 10px; /* Blago zaobljenje ivica */
     }
 
     .navbar-toggler {
@@ -128,6 +129,66 @@
         padding: 1rem;
     }
 
+
+    /* naslovnapozadina text */
+
+.hero-container {
+    position: relative; /* Omogućava pozicioniranje teksta preko slike */
+    width: 100%;
+    height: 1000px; /* Visina kontejnera */
+}
+
+.hero-image {
+    width: 100%; /* Cijela širina ekrana */
+    height: 900px; /* Fiksna visina od 1000px */
+    object-fit: cover; /* Slika pokriva prostor */
+    object-position: center; /* Centrira sliku */
+    display: block;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.hero-text {
+    position: absolute; /* Postavlja tekst preko slike */
+    top: 50%; /* Centrira vertikalno */
+    left: 50%; /* Centrira horizontalno */
+    transform: translate(-50%, -50%); /* Pomeranje za tačno centriranje */
+    text-align: center; /* Centriranje teksta unutar bloka */
+}
+
+.hero-text h1 {
+    color: #fff; /* Bijela boja za vidljivost */
+    font-size: 3rem;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Senka za čitljivost */
+    margin: 0;
+}
+
+.hero-text p {
+    color: #ecf0f1; /* Svijetla boja */
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    margin: 0.5rem 0 0;
+}
+
+/* Responzivnost */
+@media (max-width: 768px) {
+    .hero-container {
+        height: 500px; /* Smanjena visina za mobilne */
+    }
+    .hero-image {
+        height: 500px; /* Prilagođava sliku visini kontejnera */
+    }
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+}
+
     /* Footer */
     .footer {
         background: linear-gradient(135deg, #2c3e50, #34495e);
@@ -192,6 +253,7 @@
     @media (max-width: 768px) {
         .navbar-brand img {
             height: 30px;
+            border-radius: 8px; /* Manje zaobljenje za manju sliku */
         }
 
         .navbar-nav {
@@ -281,33 +343,32 @@
         }
     }
 
-  .btn-back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: linear-gradient(135deg, #2c3e50, #34495e);
-    color: #ecf0f1;
-    border: none;
-    border-radius: 50px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    cursor: pointer;
-    display: none; /* Početno sakriveno */
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px #1abc9c, 0 4px 12px rgba(0, 0, 0, 0.2); /* Zelena senka + originalna senka */
-}
+    .btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #2c3e50, #34495e);
+        color: #ecf0f1;
+        border: none;
+        border-radius: 50px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        font-family: 'Poppins', sans-serif;
+        cursor: pointer;
+        display: none; /* Početno sakriveno */
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px #1abc9c, 0 4px 12px rgba(0, 0, 0, 0.2); /* Zelena senka + originalna senka */
+    }
 
-.btn-back-to-top:hover {
-    background: #1abc9c;
-    transform: translateY(-3px);
-    box-shadow: 0 0 15px #1abc9c, 0 6px 16px rgba(0, 0, 0, 0.3); /* Jača senka na hover */
-}
+    .btn-back-to-top:hover {
+        background: #1abc9c;
+        transform: translateY(-3px);
+        box-shadow: 0 0 15px #1abc9c, 0 6px 16px rgba(0, 0, 0, 0.3); /* Jača senka na hover */
+    }
 
-.btn-back-to-top.show {
-    display: block; /* Prikazuje se kada se doda klasa 'show' */
-}
-
+    .btn-back-to-top.show {
+        display: block; /* Prikazuje se kada se doda klasa 'show' */
+    }
 </style>
 </head>
 <body>
@@ -355,18 +416,22 @@
         </div>
     </nav>
 
-    <main>
-        <p>Početna</p>
-        <div style="margin-bottom: 150px;">Ovo je prvi div.</div>
-        <p>Početna</p>
-        <p>Početna</p>
-          <div style="margin-bottom: 150px;">Ovo je prvi div.</div>
-            <div style="margin-bottom: 150px;">Ovo je 2 div.</div>
-             <p>Početna</p>
-        <p>Početna</p>
-          <div style="margin-bottom: 150px;">Ovo je prvi div.</div>
-
-    </main>
+   <main>
+    <div class="hero-container">
+        <img src="naslovna12.jpg" alt="Naslovna slika" class="hero-image">
+        <div class="hero-text">
+            <h1>Dobrodošli na CryptoGorac</h1>
+            <p>Ovo je vaša početna tačka za kripto avanturu!</p>
+        </div>
+    </div>
+    <p>Početna</p>
+    <p>Početna</p>
+    <div style="margin-bottom: 150px;">Ovo je prvi div.</div>
+    <div style="margin-bottom: 150px;">Ovo je 2 div.</div>
+    <p>Početna</p>
+    <p>Početna</p>
+    <div style="margin-bottom: 150px;">Ovo je prvi div.</div>
+</main>
     <footer class="footer">
     <div class="container-fluid">
         <div class="row text-center">
@@ -385,7 +450,7 @@
             </div>
             <div class="col-md-4 col-12 footer-section">
                 <h5>Navigacija</h5>
-                <p>
+                
                     <a href="index.html" class="footer-link">Početna</a> | 
                     <a href="o-nama.html" class="footer-link">O nama</a> | 
                     <a href="kontakti.html" class="footer-link">Kontakti</a>
