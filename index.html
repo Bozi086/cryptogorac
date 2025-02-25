@@ -140,7 +140,7 @@
 
 .hero-image {
     width: 100%; /* Cijela širina ekrana */
-    height: 900px; /* Fiksna visina od 1000px */
+    height: 1700px; /* Fiksna visina od 1000px */
     object-fit: cover; /* Slika pokriva prostor */
     object-position: center; /* Centrira sliku */
     display: block;
@@ -171,6 +171,33 @@
     font-size: 1.5rem;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
     margin: 0.5rem 0 0;
+}
+.hero-button {
+    position: absolute; /* Pozicioniranje unutar kontejnera */
+    bottom: 20px; /* Udaljenost od dna kontejnera */
+    left: 50%; /* Centriranje horizontalno */
+    transform: translateX(-50%); /* Pomeranje za tačno centriranje */
+    background-color: #fff; /* Bela pozadina za dugme */
+    color: #000; /* Crna boja teksta */
+    padding: 10px 20px; /* Unutrašnji razmak */
+    border: none; /* Bez ivica */
+    border-radius: 5px; /* Zaobljeni uglovi */
+    font-size: 1.2rem; /* Veličina fonta */
+    cursor: pointer; /* Pokazivač prilikom prelaska mišem */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Senka za dugme */
+    transition: background-color 0.3s ease; /* Glatka promena boje */
+}
+
+.hero-button:hover {
+    background-color: #e0e0e0; /* Svetlija boja pri hover efektu */
+}
+
+/* Responzivnost za dugme */
+@media (max-width: 768px) {
+    .hero-button {
+        font-size: 1rem; /* Smanjena veličina fonta za mobilne */
+        padding: 8px 16px; /* Smanjeni razmaci */
+    }
 }
 
 /* Responzivnost */
@@ -416,14 +443,15 @@
         </div>
     </nav>
 
-   <main>
-    <div class="hero-container">
-        <img src="naslovna12.jpg" alt="Naslovna slika" class="hero-image">
-        <div class="hero-text">
-            <h1>Dobrodošli na CryptoGorac</h1>
-            <p>Ovo je vaša početna tačka za kripto avanturu!</p>
-        </div>
+   <main><div class="hero-container">
+    <img src="naslovna12.jpg." alt="Hero Image" class="hero-image">
+    <div class="hero-text">
+        <h1>Tvoj Naslov</h1>
+        <p>Tvoj podnaslov ili opis</p>
     </div>
+    <a href="kontakti.html" class="hero-button">Kontaktiraj me</a>
+</div>
+  
     <p>Početna</p>
     <p>Početna</p>
     <div style="margin-bottom: 150px;">Ovo je prvi div.</div>
