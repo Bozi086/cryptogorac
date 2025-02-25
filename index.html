@@ -9,415 +9,400 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-   <style>
-    * {
-        box-sizing: border-box;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    body {
-        font-family: 'Poppins', sans-serif;
-        background-color: white;
-        min-height: 100vh; /* Ensures body takes full viewport height */
-        margin: 0; /* Removes default margin */
-        display: flex;
-        flex-direction: column;
-    }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
 
-    /* Navigacija */
-    .navbar {
-        background: linear-gradient(135deg, #2c3e50, #34495e);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        padding: 1.2rem 1rem;
-    }
+        /* Navigacija */
+        .navbar {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            padding: 1.2rem 1rem;
+        }
 
-    .navbar-brand img {
-        height: 40px;
-        width: auto;
-        border-radius: 10px; /* Blago zaobljenje ivica */
-        box-shadow: 0 6px 20px rgba(26, 188, 156, 1.6);
-    }
-
-    .navbar-toggler {
-        border: none;
-        color: #ecf0f1;
-        font-size: 1.8rem;
-    }
-
-    .navbar-toggler:focus {
-        outline: none;
-    }
-
-    .navbar-nav {
-        justify-content: center; /* Centriranje stavki na desktopu */
-        width: 100%; /* Osigurava da meni zauzme punu širinu container-a */
-    }
-
-    .navbar-nav .nav-link {
-        color: #ecf0f1;
-        font-size: 1.1rem;
-        font-weight: 500;
-        padding: 0.5rem 1rem;
-        transition: color 0.3s ease, transform 0.3s ease;
-        position: relative;
-    }
-
-    .navbar-nav .nav-link:hover,
-    .navbar-nav .nav-link.active {
-        color: #1abc9c;
-        transform: translateY(-2px);
-    }
-
-    .navbar-nav .nav-link::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        background: #1abc9c;
-        bottom: 0;
-        left: 1rem;
-        transition: width 0.3s ease;
-    }
-
-    .navbar-nav .nav-link:hover::after,
-    .navbar-nav .nav-link.active::after {
-        width: calc(100% - 2rem);
-    }
-
-    /* Dropdown */
-    .dropdown-menu {
-        background: linear-gradient(135deg, #2c3e50, #34495e);
-        border: none;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    .dropdown-item {
-        color: #ecf0f1;
-        font-size: 1rem;
-        padding: 0.8rem 1rem;
-        transition: color 0.3s ease, background-color 0.3s ease;
-        position: relative;
-    }
-
-    .dropdown-item:hover {
-        color: #1abc9c;
-        background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    .dropdown-item::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        background: #1abc9c;
-        bottom: 0;
-        left: 1rem;
-        transition: width 0.3s ease;
-    }
-
-    .dropdown-item:hover::after {
-        width: calc(100% - 2rem);
-    }
-
-    /* Sadržaj */
-    main {
-        padding-top: 4.4rem;
-        flex: 1; /* Allows main content to grow and push footer down */
-    }
-
-    p {
-        font-size: 1.2rem;
-        color: #333;
-        text-align: center;
-        padding: 1rem;
-    }
-
-
-    /* naslovnapozadina text */
-
-.hero-container {
-    position: relative;
-    width: 100%;
-    height: 80vh; /* Smanjeno sa 1000px na relativnu visinu za moderniji izgled */
-    overflow: hidden; /* Sprečava preklapanje ako slika pređe granice */
-}
-
-.hero-image {
-    width: 100%;
-    height: 100%; /* Prilagođeno visini kontejnera umesto fiksnih 1700px */
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
-    box-shadow: none;
-    filter: brightness(0.8); /* Blagi tamni filter za bolji kontrast teksta */
-}
-
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #ecf0f1; /* Svetla boja za osnovni tekst */
-}
-
-
-
-.hero-text p:hover {
-    transform: translateY(-5px); /* Blagi skok na hover */
-    box-shadow: 0 6px 20px rgba(26, 188, 156, 0.5); /* Zelena senka na hover */
-}
-
-/* Hero Button - Elegantan i interaktivan */
-.hero-button {
-    position: absolute;
-    bottom: 40px; /* Malo više od dna za bolji balans */
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(135deg, #1abc9c, #34495e); /* Zeleno-tamni gradient */
-    color: #ecf0f1; /* Svetli tekst */
-    padding: 12px 24px; /* Veći padding za moderniji izgled */
-    border: none;
-    border-radius: 50px; /* Potpuno zaobljeno dugme */
-    font-size: 1.2rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
-}
-
-.hero-button:hover {
-    background: linear-gradient(135deg, #34495e, #1abc9c); /* Obrnuti gradient */
-    transform: translateX(-50%) scale(1.05); /* Blago uvećanje */
-    box-shadow: 0 6px 20px rgba(26, 188, 156, 0.6); /* Jači zeleni sjaj */
-}
-
-/* Animacija za H1 */
-@keyframes fadeInDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responzivnost */
-@media (max-width: 768px) {
-    .hero-container {
-        height: 60vh; /* Smanjeno za mobilne */
-    }
-    .hero-text h1 {
-        font-size: 2.5rem;
-    }
-    .hero-text p {
-        font-size: 1.2rem;
-        padding: 0.4rem 1rem;
-    }
-    .hero-button {
-        font-size: 0.8rem;
-        padding: 15px 25px;
-        bottom: 35px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-text h1 {
-        font-size: 2rem;
-    }
-    .hero-text p {
-        font-size: 1rem;
-    }
-}
-
-    /* Footer */
-    .footer {
-        background: linear-gradient(135deg, #2c3e50, #34495e);
-        color: #ecf0f1;
-        padding: 2rem 1rem;
-        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    .footer-section h5 {
-        font-size: 1.3rem;
-        font-weight: 500;
-        margin-bottom: 1rem;
-        color: #1abc9c;
-    }
-
-    .footer-section p {
-        font-size: 1rem;
-        color: #ecf0f1;
-        margin: 0.5rem 0;
-    }
-
-    .footer-link {
-        color: #ecf0f1;
-        text-decoration: none;
-        position: relative;
-        transition: color 0.3s ease, transform 0.3s ease;
-    }
-
-    .footer-link:hover {
-        color: #1abc9c;
-        transform: translateY(-2px);
-    }
-
-    .footer-link::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        background: #1abc9c;
-        bottom: -4px;
-        left: 0;
-        transition: width 0.3s ease;
-    }
-
-    .footer-link:hover::after {
-        width: 100%;
-    }
-
-    .footer-bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        margin-top: 1.5rem;
-        padding-top: 1rem;
-        text-align: center;
-    }
-
-    .footer-bottom p {
-        font-size: 0.9rem;
-        color: #bdc3c7;
-    }
-
-    /* Responsive podešavanja */
-    @media (max-width: 768px) {
         .navbar-brand img {
-            height: 30px;
-            border-radius: 8px; /* Manje zaobljenje za manju sliku */
+            height: 40px;
+            width: auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(26, 188, 156, 1.6);
+        }
+
+        .navbar-toggler {
+            border: none;
+            color: #ecf0f1;
+            font-size: 1.8rem;
+        }
+
+        .navbar-toggler:focus {
+            outline: none;
         }
 
         .navbar-nav {
-            padding: 1rem; /* Dodat padding za bolji raspored */
-            justify-content: flex-start; /* Vraćeno na početak za mobilni */
+            justify-content: center;
+            width: 100%;
         }
 
         .navbar-nav .nav-link {
-            font-size: 1.2rem;
-            padding: 0.8rem 0;
-        }
-
-        .navbar-nav .nav-link::after {
-            bottom: 0.2rem;
-            left: 0;
-        }
-
-        .navbar-nav .nav-link:hover::after,
-        .navbar-nav .nav-link.active::after {
-            width: 100%;
+            color: #ecf0f1;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+            position: relative;
         }
 
         .navbar-nav .nav-link:hover,
         .navbar-nav .nav-link.active {
-            transform: translateX(5px);
+            color: #1abc9c;
+            transform: translateY(-2px);
         }
 
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #1abc9c;
+            bottom: 0;
+            left: 1rem;
+            transition: width 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: calc(100% - 2rem);
+        }
+
+        /* Dropdown */
         .dropdown-menu {
             background: linear-gradient(135deg, #2c3e50, #34495e);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin: 0.5rem 0;
+            border: none;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .dropdown-item {
-            padding: 0.6rem 1.5rem;
+            color: #ecf0f1;
+            font-size: 1rem;
+            padding: 0.8rem 1rem;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            position: relative;
+        }
+
+        .dropdown-item:hover {
+            color: #1abc9c;
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         .dropdown-item::after {
-            left: 1.5rem;
-            bottom: 0.1rem;
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #1abc9c;
+            bottom: 0;
+            left: 1rem;
+            transition: width 0.3s ease;
         }
 
         .dropdown-item:hover::after {
-            width: calc(100% - 3rem);
+            width: calc(100% - 2rem);
         }
 
+        /* Hero sekcija */
         main {
-            padding-top: 3.4rem;
+            padding-top: 4.4rem;
+            flex: 1;
         }
 
-        p {
+        .hero-container {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            margin: 0;
+            padding: 0;
+            filter: brightness(0.8);
+        }
+
+        .hero-button {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #1abc9c, #34495e);
+            color: #ecf0f1;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .hero-button:hover {
+            background: linear-gradient(135deg, #34495e, #1abc9c);
+            transform: translateX(-50%) scale(1.05);
+            box-shadow: 0 6px 20px rgba(26, 188, 156, 0.6);
+        }
+
+        /* About Container */
+        .about-container {
+            border: 3px solid #1abc9c;
+            border-radius: 15px;
+            padding: 2rem;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+            margin: 2rem auto;
+            opacity: 0;
+            transform: translateX(-100px) rotate(-5deg);
+            transition: all 0.8s ease-out;
+        }
+
+        .about-container.visible {
+            opacity: 1;
+            transform: translateX(0) rotate(0);
+        }
+
+        .about-container h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin: 0 0 1.5rem 0;
+            color: #2c3e50;
+        }
+
+        .about-container h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 1.5rem 0;
+            color: #1abc9c;
+        }
+
+        .about-container p {
             font-size: 1rem;
+            text-align: justify;
+            margin: 0 0 1rem 0;
+            line-height: 1.6;
         }
 
-        .footer-section {
-            margin-bottom: 1.5rem;
+        .about-container p b {
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .about-container:hover {
+            transform: translateY(-5px) rotate(0);
+            box-shadow: 0 8px 20px rgba(26, 188, 156, 0.4);
+        }
+
+        /* Ostali elementi */
+        main p {
+            font-size: 1.2rem;
+            color: #333;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: #ecf0f1;
+            padding: 2rem 1rem;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
         }
 
         .footer-section h5 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #1abc9c;
         }
 
         .footer-section p {
-            font-size: 0.9rem;
+            font-size: 1rem;
+            color: #ecf0f1;
+            margin: 0.5rem 0;
+        }
+
+        .footer-link {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #1abc9c;
+            transform: translateY(-2px);
+        }
+
+        .footer-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #1abc9c;
+            bottom: -4px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .footer-link:hover::after {
+            width: 100%;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            text-align: center;
         }
 
         .footer-bottom p {
-            font-size: 0.8rem;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .navbar-nav .nav-link {
-            font-size: 1.1rem;
-        }
-
-        .dropdown-item {
             font-size: 0.9rem;
+            color: #bdc3c7;
         }
 
-        .footer-section h5 {
-            font-size: 1.1rem;
+        /* Back-to-top */
+        .btn-back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: #ecf0f1;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            display: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px #1abc9c, 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
-        .footer-section p {
-            font-size: 0.85rem;
+        .btn-back-to-top:hover {
+            background: #1abc9c;
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px #1abc9c, 0 6px 16px rgba(0, 0, 0, 0.3);
         }
-    }
 
-    .btn-back-to-top {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: linear-gradient(135deg, #2c3e50, #34495e);
-        color: #ecf0f1;
-        border: none;
-        border-radius: 50px;
-        padding: 10px 20px;
-        font-size: 1rem;
-        font-family: 'Poppins', sans-serif;
-        cursor: pointer;
-        display: none; /* Početno sakriveno */
-        transition: all 0.3s ease;
-        box-shadow: 0 0 10px #1abc9c, 0 4px 12px rgba(0, 0, 0, 0.2); /* Zelena senka + originalna senka */
-    }
+        .btn-back-to-top.show {
+            display: block;
+        }
 
-    .btn-back-to-top:hover {
-        background: #1abc9c;
-        transform: translateY(-3px);
-        box-shadow: 0 0 15px #1abc9c, 0 6px 16px rgba(0, 0, 0, 0.3); /* Jača senka na hover */
-    }
+        /* Responzivnost */
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                height: 30px;
+            }
 
-    .btn-back-to-top.show {
-        display: block; /* Prikazuje se kada se doda klasa 'show' */
-    }
-</style>
+            .navbar-nav {
+                padding: 1rem;
+                justify-content: flex-start;
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 1.2rem;
+                padding: 0.8rem 0;
+            }
+
+            .navbar-nav .nav-link::after {
+                bottom: 0.2rem;
+                left: 0;
+            }
+
+            .navbar-nav .nav-link:hover::after,
+            .navbar-nav .nav-link.active::after {
+                width: 100%;
+            }
+
+            .navbar-nav .nav-link:hover,
+            .navbar-nav .nav-link.active {
+                transform: translateX(5px);
+            }
+
+            .dropdown-menu {
+                margin: 0.5rem 0;
+            }
+
+            .dropdown-item {
+                padding: 0.6rem 1.5rem;
+            }
+
+            .hero-container {
+                height: 60vh;
+            }
+
+            .hero-button {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+
+            .about-container {
+                max-width: 90%;
+                padding: 1.5rem;
+                transform: translateX(-50px) rotate(-5deg);
+            }
+
+            .about-container h1 {
+                font-size: 1.5rem;
+            }
+
+            .about-container h2 {
+                font-size: 1.3rem;
+            }
+
+            .about-container p {
+                font-size: 0.875rem;
+            }
+
+            main p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar-nav .nav-link {
+                font-size: 1.1rem;
+            }
+
+            .dropdown-item {
+                font-size: 0.9rem;
+            }
+
+            .about-container h1 {
+                font-size: 1.3rem;
+            }
+
+            .about-container h2 {
+                font-size: 1.2rem;
+            }
+
+            .about-container p {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg fixed-top">
@@ -441,8 +426,9 @@
                             Usluge
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="uslugeDropdown">
+                            <li><a class="dropdown-item" href="it-konsalting.html">IT konsalting</a></li>
                             <li><a class="dropdown-item" href="sajtovi.html">Izrada sajtova</a></li>
-                            <li><a class="dropdown-item" href="web-app.html">izrada web app</a></li>
+                            <li><a class="dropdown-item" href="web-app.html">Izrada web app</a></li>
                             <li><a class="dropdown-item" href="desktop-app.html">Izrada desk-top app</a></li>
                         </ul>
                     </li>
@@ -464,24 +450,27 @@
         </div>
     </nav>
 
-   <main><div class="hero-container">
-    <img src="naslovna12.jpg" alt="Hero Image" class="hero-image">
-    
+    <main>
+        <div class="hero-container">
+            <img src="naslovna12.jpg" alt="Hero Image" class="hero-image">
+            <a href="kontakti.html" class="hero-button">Zakažite konsultacije</a>
+        </div>
         
-      
-    
-    <a href="kontakti.html" class="hero-button">Zakažite konsultacije</a>
-</div>
-  
-    <p>Početna</p>
-    <p>Početna</p>
-    <div style="margin-bottom: 150px;">Ovo je prvi div.</div>
-    <div style="margin-bottom: 150px;">Ovo je 2 div.</div>
-    <p>Početna</p>
-    <p>Početna</p>
-    <div style="margin-bottom: 150px;">Ovo je prvi div.</div>
-</main>
-  <footer class="footer">
+        <div style="margin-bottom: 50px;"></div>
+       
+        <div class="about-container">
+            <h1>O nama</h1>
+            <p><b>Cryptogorac.com</b> je osnovan 2025. godine. Nastali smo kroz dugogodišnju saradnju na raznim projektima i tako došli na ideju da formiramo naš profesionalni tim. Cryptogorac kao softverski studio baziran je na <b>Microsoft tehnologijama</b>, ali koristi i druge tehnologije i svakodnevno usvaja nova znanja, kako bi svojim klijentima i modernom, savremenom poslovanju pružio što bolju i sigurniju uslugu.</p>
+            <br>
+            <p><b>Naš tim je sertifikovan od najeminentnijih fakulteta i kompanija iz oblasti blockchaina i crypto industrije</b>. Namjena crypto edukativne sekcije je da kroz vrijeme preraste u portal koji će biti informativno, obrazovnog karaktera usmjeren na crypto tržište, ali i na kompletnu IT industriju.</p>
+            <br>
+            <h2>Kako radimo</h2>
+            <br>
+            <p>Bazirani smo na Microsoft tehnologiji, ali smo spremni na rešavanje vaših zahtjeva u različitim izazovnim tehnologijama. Usluge koje pružamo su od IT konsaltinga, marketinga, izrade planova, sve do gotovog digitalnog proizvoda. Naši menadžeri proizvoda i projekata, kao i arhitekte softvera, su iskusni u kompletnom vođenju projekata, pa tako nudimo i usluge održavanja i nadogradnji nakon lansiranja projekta.</p>
+        </div>
+    </main>
+
+    <footer class="footer">
         <div class="container-fluid">
             <div class="row text-center">
                 <div class="col-md-4 col-12 footer-section">
@@ -489,23 +478,22 @@
                     <p>Email: <a href="mailto:info@cryptogorac.com">info@cryptogorac.com</a></p>
                     <p>Telefon: +382 67 270 604</p>
                 </div>
-              <div class="col-md-4 col-12 footer-section">
-    <h5>Pratite nas</h5>
-    <p>
-        <a href="https://fa-x-twitter.com/tvojprofil" target="_blank">
-            <i class="fab fa-x-twitter" style="font-size: 3em;"></i>
-        </a>|
-        <a href="https://instagram.com/tvojprofil" target="_blank">
-            <i class="fab fa-instagram" style="font-size: 3em;"></i>
-        </a>
-    </p>
-</div>
+                <div class="col-md-4 col-12 footer-section">
+                    <h5>Pratite nas</h5>
+                    <p>
+                        <a href="https://fa-x-twitter.com/tvojprofil" target="_blank">
+                            <i class="fab fa-x-twitter" style="font-size: 3em;"></i>
+                        </a>|
+                        <a href="https://instagram.com/tvojprofil" target="_blank">
+                            <i class="fab fa-instagram" style="font-size: 3em;"></i>
+                        </a>
+                    </p>
+                </div>
                 <div class="col-md-4 col-12 footer-section">
                     <h5>Navigacija</h5>
                     <p>
                         <a href="index.html" class="footer-link">Početna</a> | 
                         <a href="o-nama.html" class="footer-link">O nama</a> | 
-                        
                         <a href="kontakti.html" class="footer-link">Kontakti</a>
                     </p>
                 </div>
@@ -516,20 +504,45 @@
         </div>
     </footer>
 
- <button id="back-to-top" class="btn-back-to-top">↑</button>
+    <button id="back-to-top" class="btn-back-to-top">↑</button>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-       <script>
+    <script>
         const backToTopButton = document.getElementById('back-to-top');
+        const aboutContainer = document.querySelector('.about-container');
+
+        // Funkcija za proveru vidnog polja
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8
+            );
+        }
+
+        // Skrolovanje
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
                 backToTopButton.classList.add('show');
             } else {
                 backToTopButton.classList.remove('show');
             }
+
+            if (aboutContainer && isInViewport(aboutContainer)) {
+                aboutContainer.classList.add('visible');
+            }
         });
+
+        // Provera pri učitavanju
+        window.addEventListener('load', () => {
+            if (aboutContainer && isInViewport(aboutContainer)) {
+                aboutContainer.classList.add('visible');
+            }
+        });
+
+        // Back-to-top funkcionalnost
         backToTopButton.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
