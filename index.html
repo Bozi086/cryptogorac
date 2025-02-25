@@ -166,63 +166,93 @@
             box-shadow: 0 6px 20px rgba(26, 188, 156, 0.6);
         }
 
-        /* About Container */
-        .about-container {
-            border: 3px solid #1abc9c;
-            border-radius: 15px;
-            padding: 2rem;
-            background-color: #ffffff;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            max-width: 60%;
-            margin: 2rem auto;
-            opacity: 0;
-            transform: translateX(-100px) rotate(-5deg);
-            transition: all 1s ease-out;
-        }
+       /* About Container */
+.about-container {
+    border: 3px solid #1abc9c;
+    border-radius: 15px;
+    padding: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    margin: 2rem auto;
+    opacity: 0;
+    transform: translateX(-100px) rotate(-5deg);
+    transition: all 0.8s ease-out;
+    max-height: 600px; /* Početna visina na desktopu */
+    overflow-y: auto; /* Omogućava skrolovanje ako sadržaj premaši visinu */
+}
 
-        .about-container.visible {
-            opacity: 1;
-            transform: translateX(0) rotate(0);
-        }
+.about-container.visible {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+}
 
-        .about-container h1 {
-            text-align: center;
-            font-size: 2rem;
-            margin: 0 0 1.5rem 0;
-            color: #2c3e50;
-        }
+.about-container h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 0 0 1.5rem 0;
+    color: #2c3e50;
+}
 
-        .about-container h2 {
-            text-align: center;
-            font-size: 1.5rem;
-            margin: 1.5rem 0;
-            color: #1abc9c;
-        }
+.about-container h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+    color: #1abc9c;
+}
 
-        .about-container p {
-            font-size: 1rem;
-            text-align: justify;
-            margin: 0 0 1rem 0;
-            line-height: 1.6;
-        }
+.about-container p {
+    font-size: 1rem;
+    text-align: justify;
+    margin: 0 0 1rem 0;
+    line-height: 1.6;
+}
 
-        .about-container p b {
-            color: #2c3e50;
-            font-weight: 500;
-        }
+.about-container p b {
+    color: #2c3e50;
+    font-weight: 500;
+}
 
-        .about-container:hover {
-            transform: translateY(-5px) rotate(0);
-            box-shadow: 0 8px 20px rgba(26, 188, 156, 0.4);
-        }
+.about-container:hover {
+    transform: translateY(-5px) rotate(0);
+    box-shadow: 0 8px 20px rgba(26, 188, 156, 0.4);
+}
 
-        /* Ostali elementi */
-        main p {
-            font-size: 1.2rem;
-            color: #333;
-            text-align: center;
-            padding: 1rem;
-        }
+/* Responzivnost za mobilne uređaje */
+@media (max-width: 768px) {
+    .about-container {
+        max-width: 90%;
+        padding: 1.5rem;
+        transform: translateX(-50px) rotate(-5deg);
+        max-height: 360px; /* 40% manje od 600px (600 * 0.6 = 360px) */
+    }
+
+    .about-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .about-container h2 {
+        font-size: 1.3rem;
+    }
+
+    .about-container p {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-container h1 {
+        font-size: 1.3rem;
+    }
+
+    .about-container h2 {
+        font-size: 1.2rem;
+    }
+
+    .about-container p {
+        font-size: 0.8rem;
+    }
+}
 
         /* Footer */
         .footer {
