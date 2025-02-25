@@ -159,46 +159,56 @@
 }
 
 .hero-text h1 {
-    color: #fff; /* Bijela boja za vidljivost */
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* Gradient pozadina */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Prozirno da se vidi gradient */
     font-size: 3rem;
     font-weight: 500;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Senka za čitljivost */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Crna senka za kontrast */
     margin: 0;
 }
-
 .hero-text p {
-    color: #ecf0f1; /* Svijetla boja */
+    color: #ff7f50; /* Koralna boja teksta */
     font-size: 1.5rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    -webkit-text-stroke: 1px #ff7f50; /* Koralni obrub oko slova */
+    text-stroke: 1px #ff7f50; /* Standardna verzija */
+   
     margin: 0.5rem 0 0;
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* Pozadina kao navi/footer */
+    padding: 0.5rem 1rem; /* Unutrašnji razmak da tekst ne dodiruje ivice */
+    display: inline-block; /* Okvir prati širinu teksta */
+    border: 4px solid #1abc9c; /* zeleni okvir oko bloka */
+    border-radius: 15px; /* Blago zaobljenje ivica */
 }
 .hero-button {
     position: absolute; /* Pozicioniranje unutar kontejnera */
-    bottom: 20px; /* Udaljenost od dna kontejnera */
+    bottom: 30px; /* Udaljenost od dna kontejnera */
     left: 50%; /* Centriranje horizontalno */
     transform: translateX(-50%); /* Pomeranje za tačno centriranje */
-    background-color: #fff; /* Bela pozadina za dugme */
-    color: #000; /* Crna boja teksta */
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* Usklađeno sa navbarom/footerom */
+    color: #FF7F50; /* koral tekst za kontrast */
     padding: 10px 20px; /* Unutrašnji razmak */
     border: none; /* Bez ivica */
-    border-radius: 5px; /* Zaobljeni uglovi */
+    border-radius: 8px; /* Zaobljeni uglovi */
     font-size: 1.2rem; /* Veličina fonta */
+    font-family: 'Poppins', sans-serif; /* Usklađena tipografija */
     cursor: pointer; /* Pokazivač prilikom prelaska mišem */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Senka za dugme */
-    transition: background-color 0.3s ease; /* Glatka promena boje */
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Glatki prelazi */
+    text-decoration: none; /* Uklanja podvlačenje jer je link */
+    display: inline-block; /* Osigurava pravilno ponašanje */
 }
 
 .hero-button:hover {
-    background-color: #e0e0e0; /* Svetlija boja pri hover efektu */
+    background: #1abc9c; /* Akcent boja za hover, usklađeno sa sajtom */
+    transform: translateX(-50%) translateY(-3px); /* Blagi pomak na hover + zadržavanje centriranja */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Jača senka na hover */
 }
 
-/* Responzivnost za dugme */
-@media (max-width: 768px) {
-    .hero-button {
-        font-size: 1rem; /* Smanjena veličina fonta za mobilne */
-        padding: 8px 16px; /* Smanjeni razmaci */
-    }
-}
+
+
+
 
 /* Responzivnost */
 @media (max-width: 768px) {
@@ -213,6 +223,12 @@
     }
     .hero-text p {
         font-size: 1.2rem;
+    }
+}
+@media (max-width: 768px) {
+    .hero-button {
+        font-size: 1rem; /* Smanjena veličina fonta za mobilne */
+        padding: 8px 16px; /* Smanjeni razmaci */
     }
 }
 
@@ -444,12 +460,14 @@
     </nav>
 
    <main><div class="hero-container">
-    <img src="naslovna12.jpg" alt="Hero Image" class="hero-image">
+    <img src="naslovna12.jpg." alt="Hero Image" class="hero-image">
     <div class="hero-text">
-        <h1>Tvoj Naslov</h1>
-        <p>Tvoj podnaslov ili opis</p>
+        
+        <h1>CryptoGorac.com</h1>
+        <div style="margin-bottom: 350px;"></div>
+        <p>Mi smo tim profesionalaca, IT konsultanata, softverskih inzinjera, crypto i blockchain profesionalaca i prije svega dobrih ljudi</p>
     </div>
-    <a href="kontakti.html" class="hero-button">zakazite konsultacije</a>
+    <a href="kontakti.html" class="hero-button">Kontaktiraj me</a>
 </div>
   
     <p>Početna</p>
