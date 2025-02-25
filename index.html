@@ -166,20 +166,19 @@
             box-shadow: 0 6px 20px rgba(26, 188, 156, 0.6);
         }
 
-       /* About Container */
+/* About Container */
 .about-container {
     border: 3px solid #1abc9c;
     border-radius: 15px;
     padding: 2rem;
     background-color: #ffffff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 80%;
+    max-width: 70%;
     margin: 2rem auto;
     opacity: 0;
     transform: translateX(-100px) rotate(-5deg);
     transition: all 0.8s ease-out;
-    max-height: 600px; /* Početna visina na desktopu */
-    overflow-y: auto; /* Omogućava skrolovanje ako sadržaj premaši visinu */
+    height: auto; /* Visina zavisi od sadržaja */
 }
 
 .about-container.visible {
@@ -192,6 +191,8 @@
     font-size: 2rem;
     margin: 0 0 1.5rem 0;
     color: #2c3e50;
+    line-height: 1.2; /* Normalan razmak između redova na desktopu */
+    letter-spacing: 0; /* Normalan razmak između slova */
 }
 
 .about-container h2 {
@@ -199,13 +200,16 @@
     font-size: 1.5rem;
     margin: 1.5rem 0;
     color: #1abc9c;
+    line-height: 1.2;
+    letter-spacing: 0;
 }
 
 .about-container p {
     font-size: 1rem;
     text-align: justify;
     margin: 0 0 1rem 0;
-    line-height: 1.6;
+    line-height: 1.6; /* Normalan razmak između redova na desktopu */
+    letter-spacing: 0; /* Normalan razmak između slova */
 }
 
 .about-container p b {
@@ -222,35 +226,46 @@
 @media (max-width: 768px) {
     .about-container {
         max-width: 90%;
-        padding: 1.5rem;
+        padding: 1.2rem; /* Smanjen padding za 40% (2rem * 0.6) */
         transform: translateX(-50px) rotate(-5deg);
-        max-height: 360px; /* 40% manje od 600px (600 * 0.6 = 360px) */
     }
 
     .about-container h1 {
-        font-size: 1.5rem;
+        font-size: 1.2rem; /* Smanjen za 40% (2rem * 0.6) */
+        line-height: 1; /* Smanjen razmak između redova */
+        letter-spacing: -0.5px; /* Skupi slova */
     }
 
     .about-container h2 {
-        font-size: 1.3rem;
+        font-size: 0.9rem; /* Smanjen za 40% (1.5rem * 0.6) */
+        line-height: 1;
+        letter-spacing: -0.5px;
     }
 
     .about-container p {
-        font-size: 0.875rem;
+        font-size: 0.6rem; /* Smanjen za 40% (1rem * 0.6) */
+        line-height: 1.2; /* Smanjen razmak između redova za kompaktnost */
+        letter-spacing: -0.3px; /* Skupi slova */
     }
 }
 
 @media (max-width: 480px) {
     .about-container h1 {
-        font-size: 1.3rem;
+        font-size: 1rem;
+        line-height: 0.9;
+        letter-spacing: -0.4px;
     }
 
     .about-container h2 {
-        font-size: 1.2rem;
+        font-size: 0.8rem;
+        line-height: 0.9;
+        letter-spacing: -0.4px;
     }
 
     .about-container p {
-        font-size: 0.8rem;
+        font-size: 0.5rem;
+        line-height: 1.1;
+        letter-spacing: -0.2px;
     }
 }
 
@@ -432,6 +447,39 @@
                 font-size: 0.8rem;
             }
         }
+
+          /* Back-to-top */
+        .btn-back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: #ecf0f1;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            display: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px #1abc9c, 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-back-to-top:hover {
+            background: #1abc9c;
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px #1abc9c, 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-back-to-top.show {
+            display: block;
+        }
+
+        /* Responzivnost */
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                height: 30px;
+            }
     </style>
 </head>
 <body>
@@ -506,24 +554,26 @@
                 <div class="col-md-4 col-12 footer-section">
                     <h5>Kontakt</h5>
                     <p>Email: <a href="mailto:info@cryptogorac.com">info@cryptogorac.com</a></p>
+                    <br>
                     <p>Telefon: +382 67 270 604</p>
                 </div>
-                <div class="col-md-4 col-12 footer-section">
-                    <h5>Pratite nas</h5>
-                    <p>
-                        <a href="https://fa-x-twitter.com/tvojprofil" target="_blank">
-                            <i class="fab fa-x-twitter" style="font-size: 3em;"></i>
-                        </a>|
-                        <a href="https://instagram.com/tvojprofil" target="_blank">
-                            <i class="fab fa-instagram" style="font-size: 3em;"></i>
-                        </a>
-                    </p>
-                </div>
+              <div class="col-md-4 col-12 footer-section">
+    <h5>Pratite nas</h5>
+    <p>
+        <a href="https://fa-x-twitter.com/tvojprofil" target="_blank">
+            <i class="fab fa-x-twitter" style="font-size: 3em;"></i>
+        </a>|
+        <a href="https://instagram.com/tvojprofil" target="_blank">
+            <i class="fab fa-instagram" style="font-size: 3em;"></i>
+        </a>
+    </p>
+</div>
                 <div class="col-md-4 col-12 footer-section">
                     <h5>Navigacija</h5>
                     <p>
                         <a href="index.html" class="footer-link">Početna</a> | 
                         <a href="o-nama.html" class="footer-link">O nama</a> | 
+
                         <a href="kontakti.html" class="footer-link">Kontakti</a>
                     </p>
                 </div>
