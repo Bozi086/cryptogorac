@@ -133,102 +133,130 @@
     /* naslovnapozadina text */
 
 .hero-container {
-    position: relative; /* Omogućava pozicioniranje teksta preko slike */
+    position: relative;
     width: 100%;
-    height: 1000px; /* Visina kontejnera */
+    height: 80vh; /* Smanjeno sa 1000px na relativnu visinu za moderniji izgled */
+    overflow: hidden; /* Sprečava preklapanje ako slika pređe granice */
 }
 
 .hero-image {
-    width: 100%; /* Cijela širina ekrana */
-    height: 1700px; /* Fiksna visina od 1000px */
-    object-fit: cover; /* Slika pokriva prostor */
-    object-position: center; /* Centrira sliku */
+    width: 100%;
+    height: 100%; /* Prilagođeno visini kontejnera umesto fiksnih 1700px */
+    object-fit: cover;
+    object-position: center;
     display: block;
     margin: 0;
     padding: 0;
     border-radius: 0;
     box-shadow: none;
+    filter: brightness(0.8); /* Blagi tamni filter za bolji kontrast teksta */
 }
 
 .hero-text {
-    position: absolute; /* Postavlja tekst preko slike */
-    top: 50%; /* Centrira vertikalno */
-    left: 50%; /* Centrira horizontalno */
-    transform: translate(-50%, -50%); /* Pomeranje za tačno centriranje */
-    text-align: center; /* Centriranje teksta unutar bloka */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ecf0f1; /* Svetla boja za osnovni tekst */
 }
 
+/* H1 - Moderan gradient sa animacijom */
 .hero-text h1 {
-    background: linear-gradient(135deg, #2c3e50, #34495e); /* Gradient pozadina */
+    font-size: 4rem; /* Veći font za dramatičan efekat */
+    font-weight: 500;
+    background: white;
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent; /* Prozirno da se vidi gradient */
-    font-size: 3rem;
-    font-weight: 500;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Crna senka za kontrast */
+    color: transparent;
+    text-shadow: 0 0 10px rgba(26, 188, 156, 0.5); /* Suptilni zeleni sjaj */
     margin: 0;
+    animation: fadeInDown 1.5s ease-out; /* Animacija ulaska */
 }
+
+/* P - Minimalistički sa modernim efektom */
 .hero-text p {
-    color: #ff7f50; /* Koralna boja teksta */
-    font-size: 1.5rem;
-    -webkit-text-stroke: 1px #ff7f50; /* Koralni obrub oko slova */
-    text-stroke: 1px #ff7f50; /* Standardna verzija */
-   
-    margin: 0.5rem 0 0;
-    background: linear-gradient(135deg, #2c3e50, #34495e); /* Pozadina kao navi/footer */
-    padding: 0.5rem 1rem; /* Unutrašnji razmak da tekst ne dodiruje ivice */
-    display: inline-block; /* Okvir prati širinu teksta */
-    border: 4px solid #1abc9c; /* zeleni okvir oko bloka */
-    border-radius: 15px; /* Blago zaobljenje ivica */
+    font-size: 1.8rem; /* Povećano za bolju čitljivost */
+    color: #ecf0f1; /* Svetla boja umesto koralne */
+    margin: 1rem 0 0;
+    padding: 0.5rem 1.5rem;
+    background: rgba(44, 62, 80, 0.8); /* Poluprozirna tamna pozadina */
+    display: inline-block;
+    border: 2px solid #1abc9c; /* Zeleni obrub */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Dubinska senka */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.hero-text p:hover {
+    transform: translateY(-5px); /* Blagi skok na hover */
+    box-shadow: 0 6px 20px rgba(26, 188, 156, 0.5); /* Zelena senka na hover */
+}
+
+/* Hero Button - Elegantan i interaktivan */
 .hero-button {
-    position: absolute; /* Pozicioniranje unutar kontejnera */
-    bottom: 30px; /* Udaljenost od dna kontejnera */
-    left: 50%; /* Centriranje horizontalno */
-    transform: translateX(-50%); /* Pomeranje za tačno centriranje */
-    background: linear-gradient(135deg, #2c3e50, #34495e); /* Usklađeno sa navbarom/footerom */
-    color: #FF7F50; /* koral tekst za kontrast */
-    padding: 10px 20px; /* Unutrašnji razmak */
-    border: none; /* Bez ivica */
-    border-radius: 8px; /* Zaobljeni uglovi */
-    font-size: 1.2rem; /* Veličina fonta */
-    font-family: 'Poppins', sans-serif; /* Usklađena tipografija */
-    cursor: pointer; /* Pokazivač prilikom prelaska mišem */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Senka za dugme */
-    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Glatki prelazi */
-    text-decoration: none; /* Uklanja podvlačenje jer je link */
-    display: inline-block; /* Osigurava pravilno ponašanje */
+    position: absolute;
+    bottom: 40px; /* Malo više od dna za bolji balans */
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #1abc9c, #34495e); /* Zeleno-tamni gradient */
+    color: #ecf0f1; /* Svetli tekst */
+    padding: 12px 24px; /* Veći padding za moderniji izgled */
+    border: none;
+    border-radius: 50px; /* Potpuno zaobljeno dugme */
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
 }
 
 .hero-button:hover {
-    background: #1abc9c; /* Akcent boja za hover, usklađeno sa sajtom */
-    transform: translateX(-50%) translateY(-3px); /* Blagi pomak na hover + zadržavanje centriranja */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Jača senka na hover */
+    background: linear-gradient(135deg, #34495e, #1abc9c); /* Obrnuti gradient */
+    transform: translateX(-50%) scale(1.05); /* Blago uvećanje */
+    box-shadow: 0 6px 20px rgba(26, 188, 156, 0.6); /* Jači zeleni sjaj */
 }
 
-
-
-
+/* Animacija za H1 */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /* Responzivnost */
 @media (max-width: 768px) {
     .hero-container {
-        height: 500px; /* Smanjena visina za mobilne */
+        height: 60vh; /* Smanjeno za mobilne */
     }
-    .hero-image {
-        height: 500px; /* Prilagođava sliku visini kontejnera */
+    .hero-text h1 {
+        font-size: 2.5rem;
     }
+    .hero-text p {
+        font-size: 1.2rem;
+        padding: 0.4rem 1rem;
+    }
+    .hero-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+        bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
     .hero-text h1 {
         font-size: 2rem;
     }
     .hero-text p {
-        font-size: 1.2rem;
-    }
-}
-@media (max-width: 768px) {
-    .hero-button {
-        font-size: 1rem; /* Smanjena veličina fonta za mobilne */
-        padding: 8px 16px; /* Smanjeni razmaci */
+        font-size: 1rem;
     }
 }
 
@@ -464,10 +492,10 @@
     <div class="hero-text">
         
         <h1>CryptoGorac.com</h1>
-        <div style="margin-bottom: 350px;"></div>
+        <div style="margin-bottom: 200px;"></div>
         <p>Mi smo tim profesionalaca, IT konsultanata, softverskih inzinjera, crypto i blockchain profesionalaca i prije svega dobrih ljudi</p>
     </div>
-    <a href="kontakti.html" class="hero-button">Kontaktiraj me</a>
+    <a href="kontakti.html" class="hero-button">Zakažite konsultacije</a>
 </div>
   
     <p>Početna</p>
