@@ -135,13 +135,13 @@
 .hero-container {
     position: relative;
     width: 100%;
-    height: 80vh; /* Smanjeno sa 1000px na relativnu visinu za moderniji izgled */
-    overflow: hidden; /* Sprečava preklapanje ako slika pređe granice */
+    height: 80vh; /* Osnovna visina za desktop */
+    overflow: hidden;
 }
 
 .hero-image {
     width: 100%;
-    height: 100%; /* Prilagođeno visini kontejnera umesto fiksnih 1700px */
+    height: 100%;
     object-fit: cover;
     object-position: center;
     display: block;
@@ -149,7 +149,7 @@
     padding: 0;
     border-radius: 0;
     box-shadow: none;
-    filter: brightness(0.8); /* Blagi tamni filter za bolji kontrast teksta */
+    filter: brightness(0.8);
 }
 
 .hero-text {
@@ -158,52 +158,52 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: #ecf0f1; /* Svetla boja za osnovni tekst */
+    color: #ecf0f1;
 }
 
 /* H1 - Moderan gradient sa animacijom */
 .hero-text h1 {
-    font-size: 4rem; /* Veći font za dramatičan efekat */
+    font-size: 4rem;
     font-weight: 500;
     background: white;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    text-shadow: 0 0 10px rgba(26, 188, 156, 0.5); /* Suptilni zeleni sjaj */
+    text-shadow: 0 0 10px rgba(26, 188, 156, 0.5);
     margin: 0;
-    animation: fadeInDown 1.5s ease-out; /* Animacija ulaska */
+    animation: fadeInDown 1.5s ease-out;
 }
 
 /* P - Minimalistički sa modernim efektom */
 .hero-text p {
-    font-size: 1.8rem; /* Povećano za bolju čitljivost */
-    color: #ecf0f1; /* Svetla boja umesto koralne */
+    font-size: 1.8rem;
+    color: #ecf0f1;
     margin: 1rem 0 0;
     padding: 0.5rem 1.5rem;
-    background: rgba(44, 62, 80, 0.8); /* Poluprozirna tamna pozadina */
+    background: rgba(44, 62, 80, 0.8);
     display: inline-block;
-    border: 2px solid #1abc9c; /* Zeleni obrub */
+    border: 2px solid #1abc9c;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Dubinska senka */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hero-text p:hover {
-    transform: translateY(-5px); /* Blagi skok na hover */
-    box-shadow: 0 6px 20px rgba(26, 188, 156, 0.5); /* Zelena senka na hover */
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(26, 188, 156, 0.5);
 }
 
 /* Hero Button - Elegantan i interaktivan */
 .hero-button {
     position: absolute;
-    bottom: 40px; /* Malo više od dna za bolji balans */
+    bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, #1abc9c, #34495e); /* Zeleno-tamni gradient */
-    color: #ecf0f1; /* Svetli tekst */
-    padding: 12px 24px; /* Veći padding za moderniji izgled */
+    background: linear-gradient(135deg, #1abc9c, #34495e);
+    color: #ecf0f1;
+    padding: 12px 24px;
     border: none;
-    border-radius: 50px; /* Potpuno zaobljeno dugme */
+    border-radius: 50px;
     font-size: 1.2rem;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
@@ -215,9 +215,9 @@
 }
 
 .hero-button:hover {
-    background: linear-gradient(135deg, #34495e, #1abc9c); /* Obrnuti gradient */
-    transform: translateX(-50%) scale(1.05); /* Blago uvećanje */
-    box-shadow: 0 6px 20px rgba(26, 188, 156, 0.6); /* Jači zeleni sjaj */
+    background: linear-gradient(135deg, #34495e, #1abc9c);
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 6px 20px rgba(26, 188, 156, 0.6);
 }
 
 /* Animacija za H1 */
@@ -232,31 +232,72 @@
     }
 }
 
-/* Responzivnost */
+/* Responzivnost - Tableti i veći telefoni (max-width: 768px) */
 @media (max-width: 768px) {
     .hero-container {
-        height: 60vh; /* Smanjeno za mobilne */
+        height: 60vh; /* Smanjena visina za veće mobilne uređaje */
     }
     .hero-text h1 {
-        font-size: 2.5rem;
+        font-size: 2.5rem; /* Smanjen font za čitljivost */
+        text-shadow: 0 0 8px rgba(26, 188, 156, 0.5); /* Smanjena senka */
     }
     .hero-text p {
         font-size: 1.2rem;
         padding: 0.4rem 1rem;
+        margin: 0.8rem 0 0; /* Smanjen razmak */
+        max-width: 90%; /* Ograničena širina za bolji fit */
     }
     .hero-button {
         font-size: 1rem;
         padding: 10px 20px;
-        bottom: 30px;
+        bottom: 25px; /* Bliže dnu, ali ne preblizu */
     }
 }
 
+/* Responzivnost - Manji telefoni (max-width: 480px) */
 @media (max-width: 480px) {
+    .hero-container {
+        height: 50vh; /* Još manja visina za male ekrane */
+    }
+    .hero-text {
+        padding: 0 10px; /* Dodatni prostor sa strane */
+    }
     .hero-text h1 {
-        font-size: 2rem;
+        font-size: 1.8rem; /* Još manji font */
+        line-height: 1.2; /* Bolja čitljivost */
+        text-shadow: 0 0 6px rgba(26, 188, 156, 0.5); /* Suptilnija senka */
     }
     .hero-text p {
         font-size: 1rem;
+        padding: 0.3rem 0.8rem;
+        margin: 0.5rem 0 0;
+        max-width: 85%; /* Ograničena širina za male ekrane */
+        border-width: 1px; /* Tanji obrub */
+    }
+    .hero-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+        bottom: 20px; /* Još bliže dnu */
+        border-radius: 30px; /* Malo manje zaobljenje */
+    }
+}
+
+/* Dodatni breakpoint za veoma male ekrane (max-width: 360px) */
+@media (max-width: 360px) {
+    .hero-container {
+        height: 45vh; /* Minimalna visina */
+    }
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
+    .hero-text p {
+        font-size: 0.9rem;
+        padding: 0.25rem 0.6rem;
+    }
+    .hero-button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+        bottom: 15px;
     }
 }
 
