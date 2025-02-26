@@ -123,12 +123,125 @@
         flex: 1; /* Allows main content to grow and push footer down */
     }
 
-    p {
-        font-size: 1.2rem;
-        color: #333;
-        text-align: center;
-        padding: 1rem;
+   /* IT Consulting Section */
+.it-consulting-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #ffffff, #f5f6f5);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.it-consulting-section h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.it-consulting-section h1::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background: #1abc9c;
+    bottom: -0.5rem;
+    left: 25%;
+    transition: width 0.3s ease;
+}
+
+.it-consulting-section:hover h1::after {
+    width: 80%;
+}
+
+.it-consulting-section p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+    margin: 0.5rem 0;
+}
+
+.it-consulting-section strong {
+    color: #2c3e50;
+    font-weight: 500;
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+    position: relative;
+}
+
+.it-consulting-section strong::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #1abc9c;
+    bottom: -0.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.it-consulting-section .highlight {
+    color: #1abc9c;
+    font-weight: 500;
+}
+
+.it-consulting-section .cta {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: #ecf0f1;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.it-consulting-section .cta:hover {
+    background: #1abc9c;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .it-consulting-section {
+        padding: 1.5rem 1rem;
     }
+
+    .it-consulting-section h1 {
+        font-size: 1.6rem;
+    }
+
+    .it-consulting-section p {
+        font-size: 1rem;
+    }
+
+    .it-consulting-section strong {
+        font-size: 1.2rem;
+    }
+
+    .it-consulting-section .cta {
+        font-size: 1rem;
+        padding: 0.6rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .it-consulting-section h1 {
+        font-size: 1.4rem;
+    }
+
+    .it-consulting-section p {
+        font-size: 0.9rem;
+    }
+}
 
     /* Footer */
     .footer {
@@ -357,9 +470,23 @@
         </div>
     </nav>
 
-    <main>
-        <p>IT KOLSANTING</p>
-    </main>
+   <main>
+    <section class="it-consulting-section">
+        <h1>IT Konsalting</h1>
+        <p>Pružamo stručne IT konsultacije za optimizaciju vašeg poslovanja.</p>
+        <strong>Zašto mi?</strong>
+        <p><span class="highlight">Ekspertiza:</span> Rešenja bazirana na najnovijim tehnologijama.</p>
+        <p><span class="highlight">Prilagođeni pristup:</span> Strategije skrojene za vaše ciljeve.</p>
+        <p><span class="highlight">Efikasnost:</span> Poboljšanje procesa i smanjenje troškova.</p>
+        <p><span class="highlight">Podrška:</span> Saveti za razvoj, implementaciju i održavanje.</p>
+        <strong>Ponuda</strong>
+        <p>Analiza i optimizacija IT sistema.</p>
+        <p>Planiranje softverskih rešenja.</p>
+        <p>Konsultacije za digitalnu transformaciju.</p>
+        <strong>Započnimo!</strong>
+        <a href="kontakti.html" class="cta">Kontaktirajte nas i unapredite svoje poslovanje</a>
+    </section>
+</main>
 
 
 
@@ -369,7 +496,7 @@
             <div class="col-md-4 col-12 footer-section">
                 <h5>Kontakt</h5>
                 <p>Email: <a href="mailto:info@cryptogorac.com">info@cryptogorac.com</a></p>
-                <p>Telefon: +381 123 456 789</p>
+                <p>Telefon: +382 20 332 331</p>
             </div>
             <div class="col-md-4 col-12 footer-section">
                 <h5>Pratite nas</h5>
