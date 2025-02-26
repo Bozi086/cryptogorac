@@ -132,6 +132,44 @@
     }
 
 
+     /* Image Section */
+.image-section {
+    max-width: 800px; /* Usklađeno sa ostalim sekcijama */
+    margin: 2rem auto; /* Centriranje i razmak */
+    padding: 1rem;
+    text-align: center; /* Centriranje slike */
+}
+
+.custom-image {
+    width: 400px; /* Fiksna širina */
+    height: 400px; /* Fiksna visina */
+    object-fit: cover; /* Obezbeđuje da slika ispuni prostor bez izobličenja */
+    border-radius: 10px; /* Zaobljene ivice, u skladu sa dizajnom */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 10px rgba(26, 188, 156, 0.6); /* Senka sa zelenim sjajem */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animacija */
+}
+
+.custom-image:hover {
+    transform: scale(1.05); /* Blago uvećanje na hover */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3), 0 0 15px #1abc9c; /* Jača senka na hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .custom-image {
+        width: 400px; /* Smanjena veličina za tablete */
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-image {
+        width: 300px; /* Smanjena veličina za mobilne */
+        height: 300px;
+    }
+}
+
+
     /* Web App Section */
 .web-app-section {
     max-width: 800px;
@@ -146,7 +184,7 @@
 .web-app-section h1 {
     font-size: 2rem;
     font-weight: 500;
-    color: #2c3e50;
+    color: #00AEEF;
     margin-bottom: 1.5rem;
     position: relative;
     display: inline-block;
@@ -157,7 +195,7 @@
     position: absolute;
     width: 50%;
     height: 2px;
-    background: #1abc9c;
+    background: #00AEEF;
     bottom: -0.5rem;
     left: 25%;
     transition: width 0.3s ease;
@@ -175,7 +213,7 @@
 }
 
 .web-app-section strong {
-    color: #2c3e50;
+    color: #00AEEF;
     font-weight: 500;
     display: block;
     margin-top: 1.5rem;
@@ -188,14 +226,14 @@
     position: absolute;
     width: 30px;
     height: 2px;
-    background: #1abc9c;
+    background: #00AEEF;
     bottom: -0.4rem;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .web-app-section .highlight {
-    color: #1abc9c;
+    color: #00AEEF;
     font-weight: 500;
 }
 
@@ -480,6 +518,11 @@
     </nav>
 
   <main>
+
+         <section class="image-section">
+        <img src="slika-webapp.jpg" alt="Opis slike" class="custom-image">
+    </section>
+
     <section class="web-app-section">
         <h1>Izrada web aplikacija</h1>
         <p>Nudimo izradu modernih web aplikacija prilagođenih vašim potrebama uz ASP.NET MVC.</p>
