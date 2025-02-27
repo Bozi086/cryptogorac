@@ -174,11 +174,11 @@
     border-radius: 15px;
     padding: 2rem;
     background-color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     max-width: 70%;
     margin: 2rem auto;
     opacity: 0;
-    transform: translateX(-100px) rotate(-5deg);
+    transform: translateX(-100px) rotate(-10deg);
     transition: all 0.8s ease-out;
     height: auto; /* Visina zavisi od sadržaja */
 }
@@ -278,7 +278,7 @@
 
    /* Services Container */
 .services-container {
-    max-width: 1400px; /* Ograničava širinu na desktopu */
+    max-width: 1300px; /* Ograničava širinu na desktopu */
     margin: 2rem auto; /* Centrirano sa razmakom */
     display: flex; /* Horizontalni raspored */
     justify-content: space-between; /* Jednako raspoređene slike */
@@ -288,13 +288,13 @@
 
 .service-item {
     flex: 1; /* Svaka slika zauzima jednak deo prostora */
-    max-width: 500px; /* Maksimalna širina na desktopu */
+    max-width: 600px; /* Maksimalna širina na desktopu */
     text-align: center; /* Centriranje slike unutar item-a */
 }
 
 .service-item img {
-    width: 500px; /* Fiksna širina na desktopu */
-    height: 500px; /* Fiksna visina na desktopu */
+    width: 600px; /* Fiksna širina na desktopu */
+    height: 600px; /* Fiksna visina na desktopu */
     max-width: 100%; /* Osigurava da slika ne prelazi kontejner */
     border-radius: 10px; /* Zaobljene ivice */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Lagana senka */
@@ -333,6 +333,91 @@
     .service-item img {
         width: 100%; /* Maksimalna širina unutar kontejnera */
         height: auto; /* Zadržava proporcije */
+    }
+}
+        
+
+
+        .tech-container {
+    max-width: 1200px; /* Veća širina za veću sliku */
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #ffffff, #f5f6f5);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.tech-container h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.tech-container h2::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background: #1abc9c;
+    bottom: -0.5rem;
+    left: 25%;
+    transition: width 0.3s ease;
+}
+
+.tech-container:hover h2::after {
+    width: 80%;
+}
+
+.tech-image {
+    width: 1400px; /* Fiksna širina na desktopu */
+    height: 500px; /* Fiksna visina na desktopu */
+    object-fit: cover; /* Obezbeđuje da slika ispuni prostor bez izobličenja */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 10px rgba(26, 188, 156, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-image:hover {
+    transform: scale(1.03); /* Blago uvećanje na hover */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3), 0 0 15px #1abc9c;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .tech-image {
+        width: 800px; /* Smanjena veličina za veće tablete */
+        height: 640px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tech-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .tech-container h2 {
+        font-size: 1.6rem;
+    }
+
+    .tech-image {
+        width: 600px; /* Smanjena veličina za tablete */
+        height: 480px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-container h2 {
+        font-size: 1.4rem;
+    }
+
+    .tech-image {
+        width: 100%; /* Na mobilnim uređajima popunjava širinu kontejnera */
+        height: auto; /* Visina se prilagođava proporcijama slike */
+        max-width: 300px; /* Maksimalna širina za male ekrane */
     }
 }
 
@@ -614,11 +699,10 @@
             
             <p>Bazirani smo na Microsoft tehnologiji, ali smo spremni na rešavanje vaših zahtjeva u različitim izazovnim tehnologijama. Usluge koje pružamo su od IT konsaltinga, marketinga, izrade planova, sve do gotovog digitalnog proizvoda. Naši menadžeri proizvoda i projekata, kao i arhitekte softvera, su iskusni u kompletnom vođenju projekata, pa tako nudimo i usluge održavanja i nadogradnji nakon lansiranja projekta.</p>
         </div>
-<div style="margin-bottom: 50px;"></div>
-<h1 style="text-align: center; color: #27ae60; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">Usluge</h1>
-<div style="margin-bottom: 20px;"></div>
+        <div style="margin-bottom: 50px;"></div>
+        <h1 style="text-align: center; color:  #1abc9c; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">Usluge</h1>
 
-            <div class="services-container">
+           <div class="services-container">
     <div class="service-item">
         <a href="it-konsalting.html">
             <img src="slika-konsalting.jpg" alt="IT Konsalting">
@@ -641,6 +725,11 @@
     </div>
 </div>
 
+ <section class="tech-container">
+        <h2>Tehnologije koje koristimo</h2>
+        <img src="tehnologija i servisi.jpg" alt="Tehnologije sajta" class="tech-image">
+    </section>
+
     </main>
 
     <footer class="footer">
@@ -649,11 +738,10 @@
                 <div class="col-md-4 col-12 footer-section">
                     <h5>Kontakt</h5>
                     <p>Email: <a href="mailto:info@cryptogorac.com">info@cryptogorac.com</a></p>
-                    
+                    <br>
                     <p>Telefon: +382 20 332 331</p>
                 </div>
               <div class="col-md-4 col-12 footer-section">
-    <br>
     <h5>Pratite nas</h5>
     <p>
         <a href="https://fa-x-twitter.com/tvojprofil" target="_blank">
@@ -664,10 +752,7 @@
         </a>
     </p>
 </div>
-
-   
                 <div class="col-md-4 col-12 footer-section">
-       <br>
                     <h5>Navigacija</h5>
                     <p>
                         <a href="index.html" class="footer-link">Početna</a> | 
