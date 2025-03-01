@@ -423,22 +423,409 @@
 }
 
 /* linijica */
-  .line {
+.line {
     width: 100%;
-    height: 2.5px;
-    background: linear-gradient(135deg, #1abc9c, #34495e); /* Gradijent u stilu sajta */
-    position: relative; /* Prati tok dokumenta */
-    box-shadow: 0 2px 8px rgba(26, 188, 156, 0.4); /* Senka inspirisana #1abc9c */
-    transition: all 0.3s ease; /* Tranzicija kao kod drugih elemenata */
+    height: 5px;
+    background: linear-gradient(135deg, #1abc9c, #34495e, #1abc9c); /* Gradijent sa povratkom boje */
+    background-size: 200% 100%; /* Povećavamo pozadinu za animaciju */
+    position: relative;
+    box-shadow: 0 2px 8px rgba(26, 188, 156, 0.4);
+    animation: gradientMove 4s ease infinite; /* Animacija traje 4 sekunde, beskonačno se ponavlja */
+    transition: all 0.3s ease;
 }
 
-/* Opcioni hover efekat za interaktivnost */
+/* Hover efekat */
 .line:hover {
-    box-shadow: 0 4px 12px rgba(26, 188, 156, 0.6); /* Jača senka na hover */
-    transform: translateY(-1px); /* Blagi pomak kao kod nav linkova */
+    box-shadow: 0 4px 12px rgba(26, 188, 156, 0.6);
+    transform: translateY(-1px);
+}
+
+/* Animacija prelaza boja */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 
+          /* kripto edukacija */
+
+           .crypto-container {
+            max-width: 800px; /* Ograničena širina na desktopu */
+            width: 90%; /* Prilagođava se ekranu */
+            margin: 2rem auto; /* Centrirano sa razmakom */
+            padding: 2rem; /* Unutrašnji razmak */
+            background: linear-gradient(135deg, #2c3e50, #34495e); /* Gradijent kao nav i footer */
+            border-radius: 15px; /* Zaobljene ivice */
+            position: relative; /* Za animaciju senke */
+            overflow: hidden; /* Sprečava preklapanje senke */
+            box-shadow: 0 0 10px rgba(26, 188, 156, 0.6); /* Početna zelena senka */
+            animation: shadowRotate 6s linear infinite; /* Rotacija senke */
+            transition: all 0.3s ease; /* Glatka tranzicija */
+        }
+
+        .crypto-container p {
+            font-size: 1.2rem; /* Veličina teksta */
+            color: #1abc9c; /* Zelena slova */
+            font-weight: 500; /* Srednja debljina */
+            text-align: center; /* Centriran tekst */
+            margin: 0; /* Uklanja podrazumevani razmak */
+            line-height: 1.6; /* Razmak između redova */
+        }
+
+        /* Animacija rotacije senke */
+        @keyframes shadowRotate {
+            0% {
+                box-shadow: 0 0 10px rgba(26, 188, 156, 0.6), 
+                           10px 10px 20px rgba(26, 188, 156, 0.4);
+            }
+            25% {
+                box-shadow: 0 0 10px rgba(26, 188, 156, 0.6), 
+                           -10px 10px 20px rgba(26, 188, 156, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 10px rgba(26, 188, 156, 0.6), 
+                           -10px -10px 20px rgba(26, 188, 156, 0.4);
+            }
+            75% {
+                box-shadow: 0 0 10px rgba(26, 188, 156, 0.6), 
+                           10px -10px 20px rgba(26, 188, 156, 0.4);
+            }
+            100% {
+                box-shadow: 0 0 10px rgba(26, 188, 156, 0.6), 
+                           10px 10px 20px rgba(26, 188, 156, 0.4);
+            }
+        }
+
+        /* Hover efekat */
+        .crypto-container:hover {
+            transform: translateY(-5px); /* Blagi pomak kao kod drugih elemenata */
+            box-shadow: 0 0 15px rgba(26, 188, 156, 0.8); /* Jača senka na hover */
+        }
+
+        /* Responzivnost za mobilne uređaje */
+        @media (max-width: 768px) {
+            .crypto-container {
+                padding: 1.5rem; /* Smanjen padding */
+                max-width: 90%; /* Širina se prilagođava ekranu */
+            }
+
+            .crypto-container p {
+                font-size: 1rem; /* Smanjena veličina teksta */
+                line-height: 1.4; /* Malo gušći tekst */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .crypto-container {
+                padding: 1rem; /* Još manji padding */
+            }
+
+            .crypto-container p {
+                font-size: 0.9rem; /* Još manja veličina teksta */
+                line-height: 1.3; /* Kompaktan tekst */
+            }
+        }
+
+             /* kripto za knjige */
+             .carousel-container {
+            max-width: 1000px; /* Maksimalna širina karusela na desktopu */
+            width: 90%; /* Prilagođava se ekranu */
+            height: 1000px; /* Visina karusela na desktopu */
+            margin: 2rem auto; /* Centrirano sa razmakom */
+            position: relative;
+            overflow: hidden; /* Sakriva slike izvan vidnog polja */
+            border-radius: 15px; /* Zaobljene ivice */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 10px rgba(26, 188, 156, 0.6); /* Senka u stilu sajta */
+            background: linear-gradient(135deg, #2c3e50, #34495e); /* Pozadina kao nav/footer */
+        }
+
+        .carousel {
+            display: flex; /* Horizontalni raspored slika */
+            width: 100%; /* Širina karusela */
+            height: 100%; /* Popunjava kontejner */
+            animation: slide 10s infinite; /* Ukupno trajanje za 4 slike (4 * 2.5s) */
+        }
+
+        .carousel img {
+            width: 600px; /* Fiksna širina na desktopu */
+            height: 800px; /* Fiksna visina na desktopu */
+            object-fit: cover; /* Slike popunjavaju prostor bez izobličenja */
+            flex-shrink: 0; /* Sprečava smanjenje slika */
+            transition: opacity 0.5s ease; /* Glatki prelaz za vizuelni efekat */
+        }
+
+        /* Animacija za pomeranje slika */
+        @keyframes slide {
+            0% {
+                transform: translateX(0); /* Prva slika */
+            }
+            25% {
+                transform: translateX(-1000px); /* Druga slika */
+            }
+            50% {
+                transform: translateX(-2000px); /* Treća slika */
+            }
+            75% {
+                transform: translateX(-3000px); /* Četvrta slika */
+            }
+            100% {
+                transform: translateX(0); /* Povratak na prvu sliku */
+            }
+        }
+
+        /* Responzivnost za mobilne uređaje */
+        @media (max-width: 1000px) {
+            .carousel-container {
+                max-width: 90%; /* Prilagođava se širini ekrana */
+                height: auto; /* Visina se prilagođava slici */
+            }
+
+            .carousel img {
+                width: 100%; /* Slike popunjavaju širinu kontejnera */
+                height: auto; /* Visina se prilagođava proporcijama */
+            }
+
+            /* Prilagođavanje animacije za širinu ekrana */
+            @keyframes slide {
+                0% {
+                    transform: translateX(0);
+                }
+                25% {
+                    transform: translateX(-100%);
+                }
+                50% {
+                    transform: translateX(-200%);
+                }
+                75% {
+                    transform: translateX(-300%);
+                }
+                100% {
+                    transform: translateX(0);
+                }
+            }
+        }
+
+        @media (max-width: 768px) {
+            .carousel-container {
+                margin: 1.5rem auto; /* Smanjen razmak */
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), 0 0 8px rgba(26, 188, 156, 0.4); /* Smanjena senka */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-container {
+                margin: 1rem auto; /* Još manji razmak */
+            }
+        }
+
+
+           /* Kontakt informacije */
+.contact-info {
+   background: linear-gradient(135deg, #2c3e50, #34495e);
+    backdrop-filter: blur(10px); /* Stakleni efekat */
+    padding: 2.5rem;
+    margin: 2rem auto;
+    max-width: 850px;
+    border-radius: 20px; /* Zaobljeniji uglovi */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), inset 0 0 10px rgba(255, 255, 255, 0.1); /* Dublja senka + unutrašnji sjaj */
+    color: #ecf0f1;
+    border: 3px solid #1abc9c;
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Glatka animacija */
+}
+
+.contact-info:hover {
+    transform: scale(1.02); /* Suptilno uvećanje na hover */
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3), inset 0 0 12px rgba(255, 255, 255, 0.15);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin: 1.2rem 0;
+    font-size: 1.15rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+    background: rgba(255, 255, 255, 0.09); /* Suptilna pozadina za svaku stavku */
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+}
+
+.contact-item i {
+    margin-right: 1.2rem;
+    color: #1abc9c;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateX(5px); /* Bočni pomak na hover */
+    color: #1abc9c;
+}
+
+.contact-item:hover i {
+    transform: scale(1.2); /* Uvećanje ikone na hover */
+}
+
+.contact-item span {
+    position: relative;
+}
+
+.contact-item span::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #1abc9c;
+    bottom: -6px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.contact-item:hover span::after {
+    width: 100%;
+}
+
+
+           /* kontakt dugme */
+   .button-wrapper {
+    display: flex;
+    justify-content: center; /* Horizontalno centriranje */
+    width: 100%; /* Popunjava širinu roditelja (main) */
+    padding: 2rem 0; /* Razmak iznad i ispod dugmeta */
+}
+
+/* Stil za dugme - vraćamo ga u normalan tok */
+.contact-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #1abc9c, #34495e);
+    color: #ecf0f1;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(26, 188, 156, 0.4);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+    text-align: center;
+}
+
+/* Hover efekat */
+.contact-button:hover {
+    background: linear-gradient(135deg, #34495e, #1abc9c);
+    transform: translateY(-3px); /* Samo vertikalni pomak */
+    box-shadow: 0 6px 20px rgba(26, 188, 156, 0.6);
+    color: #ecf0f1;
+}
+
+/* Animacija pojavljivanja */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responzivnost */
+@media (max-width: 768px) {
+    .contact-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    .button-wrapper {
+        padding: 1.5rem 0; /* Smanjen razmak za manje ekrane */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+    .button-wrapper {
+        padding: 1rem 0; /* Još manji razmak */
+    }
+}
+                  /* Mapa */
+.map-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Senka iz navbar/footer */
+    border: 3px solid #1abc9c; 
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+}
+
+/* Responsive podešavanja */
+@media (max-width: 768px) {
+    .contact-info,
+    #contactForm,
+    .map-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .contact-item {
+        font-size: 1rem;
+    }
+
+    #contactForm h2 {
+        font-size: 1.3rem;
+    }
+
+    #contactForm input,
+    #contactForm textarea {
+        padding: 0.6rem;
+    }
+
+    #contactForm button {
+        padding: 0.6rem 1.2rem;
+    }
+
+    .map-container iframe {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info,
+    #contactForm {
+        padding: 1rem;
+    }
+
+    .contact-item {
+        font-size: 0.9rem;
+    }
+
+    .contact-item i {
+        font-size: 1.1rem;
+    }
+
+    #contactForm h2 {
+        font-size: 1.2rem;
+    }
+}
+
+
+           
         /* Footer */
         .footer {
             background: linear-gradient(135deg, #2c3e50, #34495e);
@@ -751,9 +1138,61 @@
 
            <div class="line"></div>
 
-            <div style="margin-bottom: 50px;"></div>
+            <div style="margin-bottom: 70px;"></div>
             <h3 style="display: block; font-size: 40px; color: #2c3e50; font-family: 'Poppins', sans-serif; font-weight: 500; margin: 0 auto; padding: 0.5rem; text-align: center;">cryptogorac.com</h3>
-            <div style="margin-bottom: 50px;"></div>
+            <div style="margin-bottom: 70px;"></div>
+            <h1 style="text-align: center; color:  #1abc9c; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">Crypto edukacija</h1>
+            <div style="margin-bottom: 30px;"></div>
+            <div class="crypto-container">
+    <p>Tvoj tekst o kriptovalutama ide ovde!</p>
+</div>
+ <div style="margin-bottom: 70px;"></div>
+
+
+             <div class="carousel-container">
+        <div class="carousel">
+            <img src="crypto prirucnik.jpg" alt="Slika 1">
+            <img src="https://via.placeholder.com/1000x1000?text=Slika+2" alt="Slika 2">
+            <img src="https://via.placeholder.com/1000x1000?text=Slika+3" alt="Slika 3">
+          
+        </div>
+    </div>
+
+<div style="margin-bottom: 70px;"></div>
+  <div class="line"></div>
+
+
+      <div style="margin-bottom: 70px;"></div>
+      <h1 style="text-align: center; color:  #1abc9c; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">Kontakti</h1>
+
+        <div class="contact-info">
+    <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <span>+382 67 270 604</span>
+    </div>
+    <div class="contact-item">
+        <a href="mailto:info@cryptogorac.com">
+            <i class="fas fa-envelope"></i>
+            <span>info@cryptogorac.com</span>
+        </a>
+    </div>
+    <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Podgorica, Crna Gora</span>
+    </div>
+</div>
+
+
+           <div class="button-wrapper">
+        <a href="kontakti.html" class="contact-button">Zakažite konsultacije</a>
+    </div>
+
+
+
+
+ <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2946.677614407361!2d19.259464315434!3d42.441582979181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134deb1f8f6b6f1b%3A0x5c8b7b9c9e4d7b!2sPodgorica%2C%20Montenegro!5e0!3m2!1sen!2srs!4v1677654321987!5m2!1sen!2srs" allowfullscreen="" loading="lazy"></iframe>
+        </div>
 
     </main>
 
