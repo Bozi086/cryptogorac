@@ -342,17 +342,17 @@
     max-width: 1200px; /* Veća širina za veću sliku */
     margin: 2rem auto;
     padding: 2rem 1rem;
-    background: linear-gradient(135deg, rgba(44, 62, 80, 0.6), rgba(52, 73, 94, 0.08));
+    background:background: linear-gradient(135deg, rgba(44, 62, 80, 0.6), rgba(52, 73, 94, 0.08));
 
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
 .tech-container h2 {
     font-size: 2rem;
     font-weight: 500;
-    color: #1abc9c;
+    color: black;
     margin-bottom: 1.5rem;
     position: relative;
     display: inline-block;
@@ -365,7 +365,7 @@
     height: 2px;
     background: #1abc9c;
     bottom: -0.5rem;
-    left: 25%;
+    left: 15%;
     transition: width 0.3s ease;
 }
 
@@ -374,8 +374,8 @@
 }
 
 .tech-image {
-    width: 1400px; /* Fiksna širina na desktopu */
-    height: 500px; /* Fiksna visina na desktopu */
+    width: 1250px; /* Fiksna širina na desktopu */
+    height: 625px; /* Fiksna visina na desktopu */
     object-fit: cover; /* Obezbeđuje da slika ispuni prostor bez izobličenja */
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 10px rgba(26, 188, 156, 0.6);
@@ -420,6 +420,22 @@
         height: auto; /* Visina se prilagođava proporcijama slike */
         max-width: 300px; /* Maksimalna širina za male ekrane */
     }
+}
+
+/* linijica */
+  .line {
+    width: 100%;
+    height: 2.5px;
+    background: linear-gradient(135deg, #1abc9c, #34495e); /* Gradijent u stilu sajta */
+    position: relative; /* Prati tok dokumenta */
+    box-shadow: 0 2px 8px rgba(26, 188, 156, 0.4); /* Senka inspirisana #1abc9c */
+    transition: all 0.3s ease; /* Tranzicija kao kod drugih elemenata */
+}
+
+/* Opcioni hover efekat za interaktivnost */
+.line:hover {
+    box-shadow: 0 4px 12px rgba(26, 188, 156, 0.6); /* Jača senka na hover */
+    transform: translateY(-1px); /* Blagi pomak kao kod nav linkova */
 }
 
 
@@ -727,9 +743,17 @@
 </div>
 
  <section class="tech-container">
-        <h2>Tehnologije koje koristimo</h2>
+        <h2>Tehnologije i alati koje koristimo</h2>
         <img src="tehnologija i servisi.jpg" alt="Tehnologije sajta" class="tech-image">
     </section>
+
+            <div style="margin-bottom: 50px;"></div>
+
+           <div class="line"></div>
+
+            <div style="margin-bottom: 50px;"></div>
+            <h3 style="display: block; font-size: 40px; color: #2c3e50; font-family: 'Poppins', sans-serif; font-weight: 500; margin: 0 auto; padding: 0.5rem; text-align: center;">cryptogorac.com</h3>
+            <div style="margin-bottom: 50px;"></div>
 
     </main>
 
