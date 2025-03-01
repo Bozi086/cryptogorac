@@ -535,95 +535,92 @@
 
              /* kripto za knjige */
              .carousel-container {
-            max-width: 1000px; /* Maksimalna širina karusela na desktopu */
-            width: 90%; /* Prilagođava se ekranu */
-            height: 1000px; /* Visina karusela na desktopu */
-            margin: 2rem auto; /* Centrirano sa razmakom */
-            position: relative;
-            overflow: hidden; /* Sakriva slike izvan vidnog polja */
-            border-radius: 15px; /* Zaobljene ivice */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 10px rgba(26, 188, 156, 0.6); /* Senka u stilu sajta */
-            background: linear-gradient(135deg, #2c3e50, #34495e); /* Pozadina kao nav/footer */
-        }
+    max-width: 1000px; /* Maksimalna širina karusela na desktopu */
+    width: 90%; /* Prilagođava se ekranu */
+    height: 900px; /* Visina karusela na desktopu */
+    margin: 2rem auto; /* Centrirano sa razmakom */
+    position: relative;
+    overflow: hidden; /* Sakriva slike izvan vidnog polja */
+    border-radius: 15px; /* Zaobljene ivice */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 10px rgba(26, 188, 156, 0.6); /* Senka u stilu sajta */
+    background: white;
+}
 
-        .carousel {
-            display: flex; /* Horizontalni raspored slika */
-            width: 100%; /* Širina karusela */
-            height: 100%; /* Popunjava kontejner */
-            animation: slide 10s infinite; /* Ukupno trajanje za 4 slike (4 * 2.5s) */
-        }
+.carousel {
+    position: relative; /* Omogućava apsolutno pozicioniranje slika */
+    width: 100%; /* Širina karusela */
+    height: 100%; /* Popunjava kontejner */
+}
 
-        .carousel img {
-            width: 600px; /* Fiksna širina na desktopu */
-            height: 800px; /* Fiksna visina na desktopu */
-            object-fit: cover; /* Slike popunjavaju prostor bez izobličenja */
-            flex-shrink: 0; /* Sprečava smanjenje slika */
-            transition: opacity 0.5s ease; /* Glatki prelaz za vizuelni efekat */
-        }
+.carousel img {
+    width: 600px; /* Fiksna širina na desktopu */
+    height: 800px; /* Fiksna visina na desktopu */
+    object-fit: cover; /* Slike popunjavaju prostor bez izobličenja */
+    position: absolute; /* Sve slike su jedna preko druge */
+    top: 50%; /* Centriranje po vertikali */
+    left: 50%; /* Centriranje po horizontali */
+    transform: translate(-50%, -50%); /* Tačno centriranje */
+    opacity: 0; /* Početno skrivene */
+    transition: opacity 0.5s ease; /* Glatki prelaz za pojavljivanje */
+}
 
-        /* Animacija za pomeranje slika */
-        @keyframes slide {
-            0% {
-                transform: translateX(0); /* Prva slika */
-            }
-            25% {
-                transform: translateX(-1000px); /* Druga slika */
-            }
-            50% {
-                transform: translateX(-2000px); /* Treća slika */
-            }
-            75% {
-                transform: translateX(-3000px); /* Četvrta slika */
-            }
-            100% {
-                transform: translateX(0); /* Povratak na prvu sliku */
-            }
-        }
+/* Prikazivanje slika jedna po jedna */
+.carousel img:nth-child(1) {
+    animation: slideShow 6s infinite; /* Ukupno 6s za 3 slike (2s po slici) */
+}
 
-        /* Responzivnost za mobilne uređaje */
-        @media (max-width: 1000px) {
-            .carousel-container {
-                max-width: 90%; /* Prilagođava se širini ekrana */
-                height: auto; /* Visina se prilagođava slici */
-            }
+.carousel img:nth-child(2) {
+    animation: slideShow 6s infinite 2s; /* Kašnjenje od 2s */
+}
 
-            .carousel img {
-                width: 100%; /* Slike popunjavaju širinu kontejnera */
-                height: auto; /* Visina se prilagođava proporcijama */
-            }
+.carousel img:nth-child(3) {
+    animation: slideShow 6s infinite 4s; /* Kašnjenje od 4s */
+}
 
-            /* Prilagođavanje animacije za širinu ekrana */
-            @keyframes slide {
-                0% {
-                    transform: translateX(0);
-                }
-                25% {
-                    transform: translateX(-100%);
-                }
-                50% {
-                    transform: translateX(-200%);
-                }
-                75% {
-                    transform: translateX(-300%);
-                }
-                100% {
-                    transform: translateX(0);
-                }
-            }
-        }
+/* Animacija za prikazivanje slika */
+@keyframes slideShow {
+    0% {
+        opacity: 0; /* Početno nevidljivo */
+    }
+    16.67% {
+        opacity: 1; /* Počinje da se prikazuje (1/6 trajanja = 1s) */
+    }
+    33.33% {
+        opacity: 1; /* Zadržava se vidljivo (2s ukupno vidljivo) */
+    }
+    50% {
+        opacity: 0; /* Nestaje (3s ukupno ciklusa) */
+    }
+    100% {
+        opacity: 0; /* Ostatak ciklusa je nevidljivo */
+    }
+}
 
-        @media (max-width: 768px) {
-            .carousel-container {
-                margin: 1.5rem auto; /* Smanjen razmak */
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), 0 0 8px rgba(26, 188, 156, 0.4); /* Smanjena senka */
-            }
-        }
+/* Responzivnost za mobilne uređaje */
+@media (max-width: 1000px) {
+    .carousel-container {
+        max-width: 90%; /* Prilagođava se širini ekrana */
+        height: auto; /* Visina se prilagođava slici */
+    }
 
-        @media (max-width: 480px) {
-            .carousel-container {
-                margin: 1rem auto; /* Još manji razmak */
-            }
-        }
+    .carousel img {
+        width: 100%; /* Slike popunjavaju širinu kontejnera */
+        height: auto; /* Visina se prilagođava proporcijama */
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        margin: 1.5rem auto; /* Smanjen razmak */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), 0 0 8px rgba(26, 188, 156, 0.4); /* Smanjena senka */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-container {
+        margin: 1rem auto; /* Još manji razmak */
+    }
+}
 
 
            /* Kontakt informacije */
@@ -1144,7 +1141,7 @@
             <h1 style="text-align: center; color:  #1abc9c; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">Crypto edukacija</h1>
             <div style="margin-bottom: 30px;"></div>
             <div class="crypto-container">
-    <p>tekst o kriptovalutama ide ovde!tekst o kriptovalutama ide ovde</p>
+    <p>Tvoj tekst o kriptovalutama ide ovde!</p>
 </div>
  <div style="margin-bottom: 70px;"></div>
 
@@ -1152,8 +1149,8 @@
              <div class="carousel-container">
         <div class="carousel">
             <img src="crypto prirucnik.jpg" alt="Slika 1">
-            <img src="https://via.placeholder.com/1000x1000?text=Slika+2" alt="Slika 2">
-            <img src="https://via.placeholder.com/1000x1000?text=Slika+3" alt="Slika 3">
+            <img src="crypto prirucnik.jpg" alt="Slika 2">
+            <img src="crypto prirucnik.jpg" alt="Slika 3">
           
         </div>
     </div>
