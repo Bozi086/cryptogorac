@@ -147,14 +147,14 @@ main {
     text-align: center;
     font-size: 2rem;
     margin: 0 0 1.5rem 0; /* Razmak ispod naslova */
-    color: #2c3e50; /* Tamnija boja za kontrast */
+    color:  #1abc9c; /* zelena */
 }
 
 .about-container h2 {
     text-align: center;
     font-size: 1.5rem;
     margin: 1.5rem 0; /* Razmak iznad i ispod */
-    color: #1abc9c; /* Zelena boja za h2 */
+    color:#2c3e50; /* crna boja za h2 */
 }
 
 .about-container p {
@@ -206,9 +206,66 @@ main {
         font-size: 0.8rem;
     }
 }
+
+
+ 
+        .image-container {
+            max-width: 750px; /* 60% od 1250px (umanjeno za 40%) */
+            width: 90%; /* Prilagođava se ekranu */
+            height: 315px; /* 60% od 525px (umanjeno za 40%) */
+            margin: 2rem auto; /* Centrirano sa razmakom */
+            position: relative;
+            overflow: hidden; /* Sakriva sve izvan kontejnera */
+            border-radius: 15px; /* Zaobljene ivice */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 10px rgba(26, 188, 156, 0.6); /* Senka u stilu sajta */
+            background: white;
+            display: flex; /* Za centriranje slike */
+            justify-content: center; /* Horizontalno centriranje */
+            align-items: center; /* Vertikalno centriranje */
+        }
+
+        .image-container img {
+            width: 100%; /* Prilagođava se širini kontejnera */
+            height: auto; /* Visina se prilagođava proporcijama */
+            max-width: 750px; /* Originalna umanjenja širina */
+            max-height: 315px; /* Originalna umanjenja visina */
+            object-fit: contain; /* Cela slika je vidljiva bez isečenja */
+            display: block;
+            transition: all 0.3s ease; /* Glatki prelaz za responzivnost */
+        }
+
+        /* Hover efekat (opciono) */
+        .image-container:hover img {
+            transform: scale(1.05); /* Blago uvećanje na hover */
+        }
+
+        /* Responzivnost za mobilne uređaje */
+        @media (max-width: 768px) {
+            .image-container {
+                max-width: 80%; /* Smanjena širina za tablete */
+                height: 252px; /* 80% od 315px za manje ekrane */
+                margin: 1.5rem auto; /* Smanjen razmak */
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), 0 0 8px rgba(26, 188, 156, 0.4); /* Smanjena senka */
+            }
+            .image-container img {
+                max-width: 100%; /* Prilagođava se kontejneru */
+                max-height: 252px; /* Prilagođena visina */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-container {
+                max-width: 90%; /* Još veća prilagodljivost za male telefone */
+                height: 189px; /* 60% od 315px za najmanje ekrane */
+                margin: 1rem auto; /* Još manji razmak */
+            }
+            .image-container img {
+                max-height: 189px; /* Prilagođena visina */
+            }
+        }
     
 
-    /* Footer */
+   /* Footer */
     .footer {
         background: linear-gradient(135deg, #2c3e50, #34495e);
         color: #ecf0f1;
@@ -361,7 +418,6 @@ main {
         }
     }
 
-
     .btn-back-to-top {
     position: fixed;
     bottom: 20px;
@@ -449,6 +505,10 @@ main {
         <br>
         <p>Bazirani smo na Microsoft tehnologiji, ali smo spremni na rešavanje vaših zahtjeva u različitim izazovnim tehnologijama. Usluge koje pružamo su od IT konsaltinga, marketinga, izrade planova, sve do gotovog digitalnog proizvoda. Naši menadžeri proizvoda i projekata, kao i arhitekte softvera, su iskusni u kompletnom vođenju projekata, pa tako nudimo i usluge održavanja i nadogradnji nakon lansiranja projekta.</p>
     </div>
+
+     <div class="image-container">
+        <img src="tehnologija i servisi.jpg" alt="Slika">
+    </div>
     </main>
 
      <footer class="footer">
@@ -457,7 +517,7 @@ main {
                 <div class="col-md-4 col-12 footer-section">
                     <h5>Kontakt</h5>
                     <p>Email: <a href="mailto:info@cryptogorac.com">info@cryptogorac.com</a></p>
-                    <p>Telefon: +382 20 332 331</p>
+                    <p>Telefon: +382 67 270 604</p>
                 </div>
               <div class="col-md-4 col-12 footer-section">
     <h5>Pratite nas</h5>
