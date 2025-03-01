@@ -534,7 +534,7 @@
         }
 
              /* kripto za knjige */
-             .carousel-container {
+      .carousel-container {
     max-width: 1000px; /* Maksimalna širina karusela na desktopu */
     width: 90%; /* Prilagođava se ekranu */
     height: 900px; /* Visina karusela na desktopu */
@@ -547,9 +547,9 @@
 }
 
 .carousel {
-    position: relative; /* Omogućava apsolutno pozicioniranje slika */
-    width: 100%; /* Širina karusela */
-    height: 100%; /* Popunjava kontejner */
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .carousel img {
@@ -562,6 +562,7 @@
     transform: translate(-50%, -50%); /* Tačno centriranje */
     opacity: 0; /* Početno skrivene */
     transition: opacity 0.5s ease; /* Glatki prelaz za pojavljivanje */
+    max-width: 100%; /* Osigurava da slika ne prelazi kontejner na malim ekranima */
 }
 
 /* Prikazivanje slika jedna po jedna */
@@ -600,25 +601,37 @@
 @media (max-width: 1000px) {
     .carousel-container {
         max-width: 90%; /* Prilagođava se širini ekrana */
-        height: auto; /* Visina se prilagođava slici */
+        height: 600px; /* Smanjena visina za veće mobilne uređaje */
     }
 
     .carousel img {
         width: 100%; /* Slike popunjavaju širinu kontejnera */
-        height: auto; /* Visina se prilagođava proporcijama */
+        height: 100%; /* Visina popunjava kontejner */
+        max-height: 600px; /* Ograničava maksimalnu visinu */
+        object-fit: contain; /* Zadržava proporcije slike bez isečenja */
     }
 }
 
 @media (max-width: 768px) {
     .carousel-container {
+        height: 400px; /* Još manja visina za tablete */
         margin: 1.5rem auto; /* Smanjen razmak */
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), 0 0 8px rgba(26, 188, 156, 0.4); /* Smanjena senka */
+    }
+
+    .carousel img {
+        max-height: 400px; /* Prilagođena visina */
     }
 }
 
 @media (max-width: 480px) {
     .carousel-container {
+        height: 300px; /* Najmanja visina za male telefone */
         margin: 1rem auto; /* Još manji razmak */
+    }
+
+    .carousel img {
+        max-height: 300px; /* Prilagođena visina za male ekrane */
     }
 }
 
