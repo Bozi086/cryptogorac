@@ -126,47 +126,86 @@
             flex: 1;
         }
 
-        .hero-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
+       .hero-container {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Na desktopu popunjava roditeljski kontejner */
+    overflow: hidden;
+}
 
-        .hero-image {
-            width: 100%;
-            height: 90%;
-            object-fit: cover;
-            object-position: center;
-            display: block;
-            margin: 0;
-            padding: 0;
-            filter: brightness(0.8);
-        }
+.hero-image {
+    width: 100%;
+    height: 90%; /* Na desktopu 90% visine kontejnera */
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin: 0;
+    padding: 0;
+    filter: brightness(0.8);
+}
 
-        .hero-button {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #1abc9c, #34495e);
-            color: #ecf0f1;
-            padding: 12px 24px;
-            border: 3px solid #1abc9c;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 500;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
+.hero-button {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #1abc9c, #34495e);
+    color: #ecf0f1;
+    padding: 15px 28px;
+    border: 3px solid #1abc9c;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
 
-        .hero-button:hover {
-            background: linear-gradient(135deg, #34495e, #1abc9c);
-            transform: translateX(-50%) scale(1.05);
-            box-shadow: 0 6px 20px rgba(26, 188, 156, 0.6);
-        }
+.hero-button:hover {
+    background: linear-gradient(135deg, #34495e, #1abc9c);
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 6px 20px rgba(26, 188, 156, 0.6);
+}
+
+/* Responzivnost za mobilne uređaje */
+@media (max-width: 768px) {
+    .hero-container {
+        height: 60vh; /* Smanjena visina za tablete */
+    }
+
+    .hero-image {
+        height: 100%; /* Popunjava kontejner na manjim ekranima */
+    }
+
+    .hero-button {
+        bottom: 20px; /* Smanjen razmak od dna */
+        padding: 12px 24px; /* Smanjen padding */
+        font-size: 1rem; /* Smanjena veličina fonta */
+        border-width: 2px; /* Tanji okvir */
+    }
+
+    .hero-button:hover {
+        transform: translateX(-50%) scale(1.03); /* Manje uvećanje na hover */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-container {
+        height: 50vh; /* Još manja visina za male telefone */
+    }
+
+    .hero-button {
+        bottom: 15px; /* Još bliže dnu */
+        padding: 10px 20px; /* Još manji padding */
+        font-size: 0.9rem; /* Još manji font */
+        border-width: 2px;
+    }
+
+    .hero-button:hover {
+        transform: translateX(-50%) scale(1.02); /* Minimalno uvećanje */
+    }
+}
 
 /* About Container */
 .about-container {
