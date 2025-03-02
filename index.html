@@ -172,17 +172,25 @@
         }
 
         .right-section button {
-            padding: 20px 40px; /* Veće dugme */
-            font-size: 18px; /* Veći tekst dugmeta */
-            background-color: #2C3E50;
-            color: white;
-            border: 3px solid #1abc9c;
-            border-radius: 15px;
-            cursor: pointer;
+            display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #1abc9c, #34495e);
+    color: #ecf0f1;
+    font-size: 1.2rem;
+    font-weight: 500;
+     border: 3px solid #1abc9c;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(26, 188, 156, 0.4);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+    text-align: center;
         }
 
         .right-section button:hover {
-            background-color: #0056b3;
+            background-color: #1abc9c;
         }
 
         /* Responsivnost za mobilne uređaje */
@@ -759,7 +767,7 @@
     transform: translateY(20px);
     animation: fadeInUp 1s ease forwards;
     text-align: center;
-    border: ;
+   
 }
 
 /* Hover efekat */
@@ -1223,7 +1231,7 @@
         <div class="contact-info">
     <div class="contact-item">
         <i class="fas fa-phone"></i>
-        <span>+382 67 270 604</span>
+        <span>+382 20 332 331</span>
     </div>
     <div class="contact-item">
         <a href="mailto:info@cryptogorac.com">
@@ -1352,7 +1360,7 @@
         showSlide(currentIndex);
 
         // Automatsko menjanje slika svakih 2 sekunde
-        setInterval(nextSlide, 2000);
+        setInterval(nextSlide, 2500);
     </script>
 </body>
 </html>
