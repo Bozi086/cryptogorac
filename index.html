@@ -120,127 +120,93 @@
             width: calc(100% - 2rem);
         }
 
-        /* Hero sekcija */
- main {
+     main {
     padding-top: 4.4rem; /* Ostaje isto */
     flex: 1;
 }
 
-.hero-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    max-width: 100%; /* Sprečava prelivanje */
-    margin: 0 auto; /* Centriranje */
-}
+  .main-container {
+            max-width: 1400px; /* Veća širina */
+            margin: 40px auto; /* Centrirano sa razmakom odozgo */
+            padding: 40px; /* Veći unutrašnji prostor */
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex; /* Horizontalni raspored */
+            flex-wrap: wrap; /* Omogućava prelazak na mobilnom */
+            gap: 40px; /* Razmak između delova */
+        }
 
-.hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Popunjava prostor na desktopu */
-    display: block;
-}
+        /* Levi deo - paragraf i naslov */
+        .left-section {
+            flex: 1; /* Jednako raspoređuje širinu */
+            min-width: 400px; /* Veće polje */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; /* Poravnanje levo */
+            padding: 20px;
+        }
 
-.hero-slogan {
-    position: absolute;
-    top: 100px; /* Fiksna pozicija na desktopu */
-    left: 50%;
-    transform: translateX(-50%);
-    color:#1abc9c;
-    font-size: 24px;
-    text-align: center;
-    margin: 0;
-    padding: 0 10px;
-    width: 100%;
-    max-width: 90%; /* Ograničava širinu teksta */
-}
+        .left-section p {
+            font-size: 20px; /* Veći tekst */
+            margin-bottom: 20px;
+        }
 
-.hero-site-name {
-    position: absolute;
-    top: 100px; /* Fiksna pozicija ispod slogana */
-    left: 50%;
-    transform: translateX(-50%);
-    color: #1abc9c;
-    font-size: 48px;
-    text-align: center;
-    margin: 0;
-    padding: 0 10px;
-    width: 100%;
-    max-width: 90%; /* Ograničava širinu teksta */
-}
+        .left-section h1 {
+            font-size: 40px; /* Veći naslov */
+        }
 
-.hero-button {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(135deg, #1abc9c, #34495e);
-    color: #ecf0f1;
-    padding: 15px 28px;
-    border: 3px solid #1abc9c;
-    border-radius: 50px;
-    font-size: 18px;
-    text-decoration: none;
-}
+        /* Desni deo - dugme */
+        .right-section {
+            flex: 1; /* Jednako raspoređuje širinu */
+            min-width: 400px; /* Veće polje */
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Centriranje dugmeta */
+            padding: 20px;
+        }
 
-/* Responzivnost za mobilne uređaje */
-@media (max-width: 768px) {
-    .hero-container {
-        height: auto; /* Prilagođava se sadržaju */
-        max-height: 600px; /* Ograničava visinu */
-    }
+        .right-section button {
+            padding: 20px 40px; /* Veće dugme */
+            font-size: 18px; /* Veći tekst dugmeta */
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-    .hero-image {
-        object-fit: contain; /* Cela slika je vidljiva */
-        height: auto;
-        max-height: 600px;
-    }
+        .right-section button:hover {
+            background-color: #0056b3;
+        }
 
-    .hero-slogan {
-        top: 10%; /* Procentualno za bolje prilagođavanje */
-        font-size: 18px;
-    }
+        /* Responsivnost za mobilne uređaje */
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column; /* Vertikalni raspored na mobilnom */
+                padding: 20px; /* Smanjeni padding */
+            }
 
-    .hero-site-name {
-        top: 20%; /* Procentualno za bolje prilagođavanje */
-        font-size: 32px;
-    }
+            .left-section, .right-section {
+                min-width: 100%; /* Puna širina na mobilnom */
+                align-items: center; /* Centriranje na mobilnom */
+                text-align: center; /* Centrirani tekst na mobilnom */
+            }
 
-    .hero-button {
-        bottom: 5%; /* Procentualno za bolje prilagođavanje */
-        padding: 12px 24px;
-        font-size: 16px;
-        border-width: 2px;
- text-align: center;
-    }
-}
+            .left-section p {
+                font-size: 18px;
+            }
 
-@media (max-width: 480px) {
-    .hero-container {
-        max-height: 450px; /* Još manja visina */
-    }
+            .left-section h1 {
+                font-size: 32px;
+            }
 
-    .hero-image {
-        max-height: 450px;
-    }
-
-    .hero-slogan {
-        top: 8%;
-        font-size: 16px;
-    }
-
-    .hero-site-name {
-        top: 18%;
-        font-size: 24px;
-    }
-
-    .hero-button {
-        bottom: 5%;
-        padding: 10px 20px;
-        font-size: 14px;
-        border-width: 2px;
-    }
-}
+            .right-section button {
+                padding: 15px 30px;
+                font-size: 16px;
+            }
+        }
 
 /* About Container */
 .about-container {
@@ -846,7 +812,7 @@
 }
                   /* Mapa */
 .map-container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 2rem auto;
     border-radius: 15px;
     overflow: hidden;
@@ -1172,12 +1138,17 @@
     </nav>
 
     <main>
-       <div class="hero-container">
-        <img src="naslovna12.jpg" alt="Hero Image" class="hero-image">
-        <p class="hero-slogan">Mi smo profesionalci, mi smo ljudi, mi smo </p>
-        <h1 class="hero-site-name">CryptoGorac.com</h1>
-        <a href="kontakti.html" class="hero-button">Zakažite konsultacije</a>
+
+            <div class="main-container">
+        <div class="left-section">
+            <p>Ovo je primjer paragrafa u levom delu ekrana.</p>
+            <h1>Naslov</h1>
+        </div>
+        <div class="right-section">
+            <button>Klikni me</button>
+        </div>
     </div>
+       
         
         <div style="margin-bottom: 50px;"></div>
        
@@ -1256,7 +1227,7 @@
         <div class="contact-info">
     <div class="contact-item">
         <i class="fas fa-phone"></i>
-        <span>+382 20 332 331</span>
+        <span>+382 67 270 604</span>
     </div>
     <div class="contact-item">
         <a href="mailto:info@cryptogorac.com">
