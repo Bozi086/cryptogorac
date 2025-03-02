@@ -162,23 +162,23 @@
         }
 
         /* Desni deo - dugme */
-        .right-section {
-            flex: 1; /* Jednako raspoređuje širinu */
-            min-width: 400px; /* Veće polje */
-            display: flex;
-            justify-content: center;
-            align-items: center; /* Centriranje dugmeta */
-            padding: 20px;
-        }
+       .right-section {
+    flex: 1;
+    min-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
 
-        .right-section button {
-            display: inline-block;
+.right-section .button {
+    display: inline-block;
     padding: 12px 24px;
     background: linear-gradient(135deg, #1abc9c, #34495e);
     color: #ecf0f1;
     font-size: 1.2rem;
     font-weight: 500;
-     border: 3px solid #1abc9c;
+    border: 3px solid #1abc9c;
     text-decoration: none;
     border-radius: 50px;
     box-shadow: 0 4px 15px rgba(26, 188, 156, 0.4);
@@ -187,38 +187,45 @@
     transform: translateY(20px);
     animation: fadeInUp 1s ease forwards;
     text-align: center;
-        }
+}
 
-        .right-section button:hover {
-            background-color: #1abc9c;
-        }
+.right-section .button:hover {
+    background: #1abc9c; /* Changed to background instead of background-color to override the gradient */
+}
 
-        /* Responsivnost za mobilne uređaje */
-        @media (max-width: 768px) {
-            .main-container {
-                flex-direction: column; /* Vertikalni raspored na mobilnom */
-                padding: 20px; /* Smanjeni padding */
-            }
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        padding: 20px;
+    }
 
-            .left-section, .right-section {
-                min-width: 100%; /* Puna širina na mobilnom */
-                align-items: center; /* Centriranje na mobilnom */
-                text-align: center; /* Centrirani tekst na mobilnom */
-            }
+    .left-section, .right-section {
+        min-width: 100%;
+        align-items: center;
+        text-align: center;
+    }
 
-            .left-section p {
-                font-size: 18px;
-            }
+    .left-section p {
+        font-size: 18px;
+    }
 
-            .left-section h1 {
-                font-size: 32px;
-            }
+    .left-section h1 {
+        font-size: 32px;
+    }
 
-            .right-section button {
-                padding: 15px 30px;
-                font-size: 16px;
-            }
-        }
+    .right-section .button {
+        padding: 15px 30px;
+        font-size: 16px;
+    }
+}
+
+/* Assuming this animation is defined somewhere in your CSS */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /* About Container */
 .about-container {
@@ -1144,9 +1151,10 @@
             <p><b>Mi smo tim profesionalaca, mi smo ljudi, mi smo</b></p>
             <h1>CryptoGorac.com</h1>
         </div>
+
         <div class="right-section">
-            <button>Zakažite konsultacije</button>
-        </div>
+    <a href="kontakti.html" class="button">Zakažite konsultacije</a>
+</div>
     </div>
        
         
@@ -1203,7 +1211,7 @@
             <h1 style="text-align: center; color:  #1abc9c; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">Crypto edukacija</h1>
             <div style="margin-bottom: 30px;"></div>
             <div class="crypto-container">
-    <p>Ova sekcija nastala je sa posebnom emocijom jednog našeg developera i šefa marketinga. Plan je da preraste u informativno-obrazovni portal za kriptovalute, ali i da se bavi svim granama IT industrije.</p>
+    <p>Ova sekcija nastala je sa posebnom emocijom jednog našeg developera i šefice marketinga. Plan je da preraste u informativno-obrazovni portal za kriptovalute, ali i da se bavi svim granama IT industrije.</p>
 </div>
  <div style="margin-bottom: 70px;"></div>
 
