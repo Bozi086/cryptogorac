@@ -126,7 +126,7 @@
             flex: 1;
         }
 
-       .hero-container {
+      .hero-container {
     position: relative;
     width: 100%;
     height: 100%; /* Na desktopu popunjava roditeljski kontejner */
@@ -136,7 +136,7 @@
 .hero-image {
     width: 100%;
     height: 90%; /* Na desktopu 90% visine kontejnera */
-    object-fit: cover;
+    object-fit: cover; /* Na desktopu popunjava prostor */
     object-position: center;
     display: block;
     margin: 0;
@@ -175,18 +175,19 @@
     }
 
     .hero-image {
-        height: 100%; /* Popunjava kontejner na manjim ekranima */
+        height: 100%; /* Popunjava kontejner */
+        object-fit: contain; /* Cela slika je vidljiva na mobilnim uređajima */
     }
 
     .hero-button {
-        bottom: 20px; /* Smanjen razmak od dna */
-        padding: 12px 24px; /* Smanjen padding */
-        font-size: 0.9rem; /* Smanjena veličina fonta */
-        border-width: 2px; /* Tanji okvir */
+        bottom: 20px;
+        padding: 12px 24px;
+        font-size: 1rem;
+        border-width: 2px;
     }
 
     .hero-button:hover {
-        transform: translateX(-50%) scale(1.03); /* Manje uvećanje na hover */
+        transform: translateX(-50%) scale(1.03);
     }
 }
 
@@ -195,15 +196,20 @@
         height: 50vh; /* Još manja visina za male telefone */
     }
 
+    .hero-image {
+        height: 100%; /* Popunjava kontejner */
+        object-fit: contain; /* Cela slika je vidljiva */
+    }
+
     .hero-button {
-        bottom: 15px; /* Još bliže dnu */
-        padding: 10px 20px; /* Još manji padding */
-        font-size: 0.9rem; /* Još manji font */
+        bottom: 15px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
         border-width: 2px;
     }
 
     .hero-button:hover {
-        transform: translateX(-50%) scale(1.02); /* Minimalno uvećanje */
+        transform: translateX(-50%) scale(1.02);
     }
 }
 
