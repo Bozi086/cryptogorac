@@ -121,58 +121,38 @@
         }
 
         /* Hero sekcija */
-  main {
-    padding-top: 4.4rem; /* Ostaje isto za desktop */
-    flex: 1;
-    display: flex; /* Osigurava da hero sekcija popuni prostor */
-    flex-direction: column;
-}
-
-.hero-container {
+ .hero-container {
     position: relative;
-    width: 1500px; /* Fiksna širina na desktopu */
-    height: 900px; /* Fiksna visina na desktopu */
-    max-width: 100%; /* Osigurava da ne prelazi ekran na manjim rezolucijama */
-    margin: 0 auto; /* Centrirano */
-    overflow: hidden; /* Sakriva sve izvan kontejnera */
+    width: 1500px;
+    height: 900px;
+    max-width: 100%; /* Sprečava prelivanje na manjim ekranima */
+    margin: 0 auto; /* Centriranje */
 }
 
 .hero-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Popunjava prostor na desktopu */
-    object-position: center;
-    display: block;
+    object-fit: cover;
 }
 
 .hero-slogan {
     position: absolute;
-    top: 20%; /* Pozicioniranje iznad centra */
+    top: 100px; /* Fiksna pozicija */
     left: 50%;
     transform: translateX(-50%);
     color: #ecf0f1;
-    font-size: 1.8rem;
-    font-weight: 400;
+    font-size: 24px; /* Fiksna veličina u pikselima */
     text-align: center;
-    margin: 0;
-    padding: 0 1rem;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-    width: 100%;
 }
 
 .hero-site-name {
     position: absolute;
-    top: 30%; /* Ispod slogana */
+    top: 150px; /* Fiksna pozicija ispod slogana */
     left: 50%;
     transform: translateX(-50%);
     color: #1abc9c;
-    font-size: 3rem;
-    font-weight: 500;
+    font-size: 48px; /* Fiksna veličina u pikselima */
     text-align: center;
-    margin: 0;
-    padding: 0 1rem;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-    width: 100%;
 }
 
 .hero-button {
@@ -185,85 +165,58 @@
     padding: 15px 28px;
     border: 3px solid #1abc9c;
     border-radius: 50px;
-    font-size: 1.2rem;
-    font-weight: 500;
+    font-size: 18px; /* Fiksna veličina u pikselima */
     text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.hero-button:hover {
-    background: linear-gradient(135deg, #34495e, #1abc9c);
-    transform: translateX(-50%) scale(1.05);
 }
 
 /* Responzivnost za mobilne uređaje */
 @media (max-width: 768px) {
     .hero-container {
-        height: auto; /* Prilagođava se slici */
-        max-height: 600px; /* Ograničava visinu */
+        height: 600px; /* Smanjena visina */
     }
 
     .hero-image {
-        height: auto;
-        max-height: 600px;
         object-fit: contain; /* Cela slika je vidljiva */
     }
 
     .hero-slogan {
-        top: 10%; /* Bliže vrhu */
-        font-size: 1.4rem;
-        padding: 0 0.8rem;
+        top: 50px;
+        font-size: 18px;
     }
 
     .hero-site-name {
-        top: 20%; /* Bliže vrhu */
-        font-size: 2rem;
-        padding: 0 0.8rem;
+        top: 80px;
+        font-size: 32px;
     }
 
     .hero-button {
         bottom: 20px;
         padding: 12px 24px;
-        font-size: 1rem;
+        font-size: 16px;
         border-width: 2px;
-    }
-
-    .hero-button:hover {
-        transform: translateX(-50%) scale(1.03);
     }
 }
 
 @media (max-width: 480px) {
     .hero-container {
-        max-height: 450px; /* Još manja visina */
-    }
-
-    .hero-image {
-        max-height: 450px;
-        object-fit: contain;
+        height: 450px; /* Još manja visina */
     }
 
     .hero-slogan {
-        top: 8%;
-        font-size: 1.2rem;
-        padding: 0 0.5rem;
+        top: 30px;
+        font-size: 16px;
     }
 
     .hero-site-name {
-        top: 18%;
-        font-size: 1.6rem;
-        padding: 0 0.5rem;
+        top: 60px;
+        font-size: 24px;
     }
 
     .hero-button {
         bottom: 15px;
         padding: 10px 20px;
-        font-size: 0.9rem;
+        font-size: 14px;
         border-width: 2px;
-    }
-
-    .hero-button:hover {
-        transform: translateX(-50%) scale(1.02);
     }
 }
 
