@@ -242,7 +242,20 @@
 
 
               /* Stil za text-ticker kontejner */
-        .text-ticker {
+          .text-ticker {
+            max-width: 1300px; /* Maksimalna širina u skladu s prethodnim kontejnerima */
+            width: 95%; /* Prilagođava se ekranu */
+            margin: 2rem auto; /* Centrirano */
+            padding: 20px; /* Unutrašnji razmak */
+            background-color: white;
+            border: 3px solid #2ecc71; /* Zeleni border kao u prethodnom primeru */
+            border-radius: 10px; /* Zaobljene ivice */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 10px rgba(26, 188, 156, 0.6); /* Senka u stilu sajta */
+            overflow: hidden; /* Sakriva tekst koji prelazi granice */
+        }
+
+        /* Stil za sadržaj text-ticker-a */
+       .text-ticker {
             max-width: 1300px; /* Maksimalna širina u skladu s prethodnim kontejnerima */
             width: 95%; /* Prilagođava se ekranu */
             margin: 2rem auto; /* Centrirano */
@@ -260,24 +273,24 @@
             white-space: nowrap; /* Tekst ostaje u jednoj liniji */
             font-size: 21px; /* Veličina teksta */
             color: #333; /* Tamno siva boja za osnovni tekst */
-            animation: ticker 33s linear infinite; /* Animacija pomeranja */
+            animation: ticker 37s linear infinite; /* Animacija pomeranja */
         }
 
-        /* Boldirani deo (MONTEBILANS) */
+        /* Boldirani deo */
         .text-ticker-content b {
             color: #e67e22; /* Narandžasta boja za naglašeni tekst */
             font-weight: bold;
         }
 
-        /* Animacija za pomeranje teksta */
-        @keyframes ticker {
-            0% {
-                transform: translateX(100%); /* Počinje sa desne strane */
-            }
-            100% {
-                transform: translateX(-100%); /* Završava van leve strane */
-            }
-        }
+        /* Animacija za pomeranje teksta - sa desne ka levoj */
+       @keyframes ticker {
+    0% {
+        transform: translateX(50%); /* Tekst počinje na vidljivom mestu */
+    }
+    100% {
+        transform: translateX(-100%); /* Završava van leve strane */
+    }
+}
 
         /* Responzivnost */
         @media (max-width: 768px) {
@@ -290,7 +303,7 @@
 
             .text-ticker-content {
                 font-size: 18px; /* Smanjena veličina teksta */
-                animation-duration: 33s; /* Ubrzana animacija za manje ekrane */
+                animation-duration: 37s; /* Ubrzana animacija za manje ekrane */
             }
         }
 
@@ -302,7 +315,7 @@
 
             .text-ticker-content {
                 font-size: 16px; /* Još manji tekst */
-                animation-duration: 33s; /* Još brža animacija */
+                animation-duration: 37s; /* Još brža animacija */
             }
         }
 
@@ -611,7 +624,7 @@
 
            <div class="text-ticker">
         <div class="text-ticker-content">
-            Crypto edukacija - <b>Crypto VALUTE</b> - kako Crna Gora nije u SEPA tako nijesmo u mogucnosti da vam ponudimo digitalne verzije nasih prirucnika, najavljeno je tokom maja ove godine biti omoguceno. Do tada cemo dijeliti po nama bitnije djelove od svake knje , sa svakim nasim nadogradnjom sajta!!!
+            Crypto edukacija - <b>Crypto VALUTE</b> - Kako Crna Gora nije u SEPA, nismo u mogućnosti da vam ponudimo digitalne verzije naših priručnika. Najavljeno je tokom maja ove godine da će to biti omogućeno. Do tada ćemo dijeliti po nama bitnije dijelove iz svake knjige sa svakom nadogradnjom sajta.
         </div>
     </div>
 
