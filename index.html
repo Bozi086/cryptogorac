@@ -128,28 +128,37 @@
     flex-direction: column;
 }
 
+/* ... Ostali stilovi ... */
+
+main {
+    padding-top: 4.4rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 .hero-container {
     position: relative;
     width: 100%;
-    height: 90vh; /* Fiksna visina na desktopu za bolju kontrolu */
+    height: 70vh;
     overflow: hidden;
-    background: linear-gradient(135deg, rgba(44, 62, 80, 0.05), rgba(52, 73, 94, 0.05)); /* Suptilna pozadina */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Lagana senka ispod */
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.05), rgba(52, 73, 94, 0.05));
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .hero-image {
     width: 100%;
-    height: 100%; /* Popunjava kontejner na desktopu */
-    object-fit: cover; /* Na desktopu popunjava prostor */
+    height: 100%;
+    object-fit: cover;
     object-position: center;
     display: block;
     margin: 0;
     padding: 0;
-    transition: transform 0.5s ease; /* Glatki efekat za hover */
+    transition: transform 0.5s ease;
 }
 
 .hero-container:hover .hero-image {
-    transform: scale(1.03); /* Blago uvećanje na hover */
+    transform: scale(1.03);
 }
 
 .hero-button {
@@ -168,7 +177,7 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     text-decoration: none;
     transition: all 0.3s ease;
-    z-index: 10; /* Osigurava da dugme bude iznad slike */
+    z-index: 10;
 }
 
 .hero-button:hover {
@@ -177,31 +186,27 @@
     box-shadow: 0 6px 20px rgba(26, 188, 156, 0.6);
 }
 
-/* Responzivnost za mobilne uređaje */
 @media (max-width: 768px) {
     main {
-        padding-top: 3rem; /* Smanjen padding za tablete */
+        padding-top: 3rem;
     }
-
     .hero-container {
-        height: auto; /* Visina se prilagođava slici */
-        min-height: 50vh; /* Minimalna visina za estetiku */
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Smanjena senka */
+        height: auto;
+        max-height: 60vh;
+        min-height: 40vh;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
-
     .hero-image {
-        height: auto; /* Visina se prilagođava proporcijama slike */
-        max-height: 60vh; /* Maksimalna visina za kontrolu */
-        object-fit: contain; /* Cela slika je vidljiva */
+        height: auto;
+        max-height: 60vh;
+        object-fit: contain;
     }
-
     .hero-button {
         bottom: 20px;
         padding: 12px 24px;
         font-size: 1rem;
         border-width: 2px;
     }
-
     .hero-button:hover {
         transform: translateX(-50%) scale(1.03);
     }
@@ -209,30 +214,29 @@
 
 @media (max-width: 480px) {
     main {
-        padding-top: 2rem; /* Još manji padding za male telefone */
+        padding-top: 2rem;
     }
-
     .hero-container {
-        height: auto; /* Visina se prilagođava slici */
-        min-height: 40vh; /* Još manja minimalna visina */
+        height: auto;
+        max-height: 50vh;
+        min-height: 30vh;
     }
-
     .hero-image {
-        max-height: 50vh; /* Još manja maksimalna visina */
-        object-fit: contain; /* Cela slika je vidljiva */
+        max-height: 50vh;
+        object-fit: contain;
     }
-
     .hero-button {
         bottom: 15px;
         padding: 10px 20px;
         font-size: 0.9rem;
         border-width: 2px;
     }
-
     .hero-button:hover {
         transform: translateX(-50%) scale(1.02);
     }
 }
+
+/* ... Ostali stilovi ... */
 
 /* About Container */
 .about-container {
