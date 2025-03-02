@@ -121,27 +121,35 @@
         }
 
         /* Hero sekcija */
-        main {
-            padding-top: 4.4rem;
-            flex: 1;
-        }
+  main {
+    padding-top: 4.4rem; /* Ostaje isto za desktop */
+    flex: 1;
+    display: flex; /* Osigurava da hero sekcija popuni prostor */
+    flex-direction: column;
+}
 
-      .hero-container {
+.hero-container {
     position: relative;
     width: 100%;
-    height: 100%; /* Na desktopu popunjava roditeljski kontejner */
+    height: 90vh; /* Fiksna visina na desktopu za bolju kontrolu */
     overflow: hidden;
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.05), rgba(52, 73, 94, 0.05)); /* Suptilna pozadina */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Lagana senka ispod */
 }
 
 .hero-image {
     width: 100%;
-    height: 100%; /* Na desktopu 90% visine kontejnera */
+    height: 100%; /* Popunjava kontejner na desktopu */
     object-fit: cover; /* Na desktopu popunjava prostor */
     object-position: center;
     display: block;
     margin: 0;
     padding: 0;
-    filter: brightness(0.8);
+    transition: transform 0.5s ease; /* Glatki efekat za hover */
+}
+
+.hero-container:hover .hero-image {
+    transform: scale(1.03); /* Blago uvećanje na hover */
 }
 
 .hero-button {
@@ -160,6 +168,7 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     text-decoration: none;
     transition: all 0.3s ease;
+    z-index: 10; /* Osigurava da dugme bude iznad slike */
 }
 
 .hero-button:hover {
@@ -170,13 +179,20 @@
 
 /* Responzivnost za mobilne uređaje */
 @media (max-width: 768px) {
+    main {
+        padding-top: 3rem; /* Smanjen padding za tablete */
+    }
+
     .hero-container {
-        height: 60vh; /* Smanjena visina za tablete */
+        height: auto; /* Visina se prilagođava slici */
+        min-height: 50vh; /* Minimalna visina za estetiku */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Smanjena senka */
     }
 
     .hero-image {
-        height: 100%; /* Popunjava kontejner */
-        object-fit: contain; /* Cela slika je vidljiva na mobilnim uređajima */
+        height: auto; /* Visina se prilagođava proporcijama slike */
+        max-height: 60vh; /* Maksimalna visina za kontrolu */
+        object-fit: contain; /* Cela slika je vidljiva */
     }
 
     .hero-button {
@@ -192,12 +208,17 @@
 }
 
 @media (max-width: 480px) {
+    main {
+        padding-top: 2rem; /* Još manji padding za male telefone */
+    }
+
     .hero-container {
-        height: 50vh; /* Još manja visina za male telefone */
+        height: auto; /* Visina se prilagođava slici */
+        min-height: 40vh; /* Još manja minimalna visina */
     }
 
     .hero-image {
-        height: 100%; /* Popunjava kontejner */
+        max-height: 50vh; /* Još manja maksimalna visina */
         object-fit: contain; /* Cela slika je vidljiva */
     }
 
