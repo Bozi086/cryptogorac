@@ -196,6 +196,78 @@
 .contact-item:hover span::after {
     width: 100%;
 }
+
+    /* Stil za naslov sa rotacijom */
+.rotating-title {
+    display: block;
+    font-size: 40px;
+    color: #2c3e50;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin: 0 auto;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+/* Podešavanje za slova unutar naslova */
+.rotating-title span {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s ease; /* Glatka tranzicija za rotaciju */
+}
+
+/* Hover efekat - rotacija slova */
+.rotating-title:hover span {
+    animation: rotateLetter 0.6s ease forwards; /* Rotacija na hover */
+}
+
+/* Animacija za rotaciju slova */
+@keyframes rotateLetter {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(12deg); /* Blaga rotacija udesno */
+    }
+    100% {
+        transform: rotate(0deg); /* Vraća se na početni položaj */
+    }
+}
+
+/* Podešavanje kašnjenja za svako slovo (cryptogorac.com ima 15 karaktera) */
+.rotating-title span:nth-child(1) { animation-delay: 0s; }
+.rotating-title span:nth-child(2) { animation-delay: 0.03s; }
+.rotating-title span:nth-child(3) { animation-delay: 0.06s; }
+.rotating-title span:nth-child(4) { animation-delay: 0.09s; }
+.rotating-title span:nth-child(5) { animation-delay: 0.12s; }
+.rotating-title span:nth-child(6) { animation-delay: 0.15s; }
+.rotating-title span:nth-child(7) { animation-delay: 0.18s; }
+.rotating-title span:nth-child(8) { animation-delay: 0.21s; }
+.rotating-title span:nth-child(9) { animation-delay: 0.24s; }
+.rotating-title span:nth-child(10) { animation-delay: 0.27s; }
+.rotating-title span:nth-child(11) { animation-delay: 0.30s; }
+.rotating-title span:nth-child(12) { animation-delay: 0.33s; }
+.rotating-title span:nth-child(13) { animation-delay: 0.36s; }
+.rotating-title span:nth-child(14) { animation-delay: 0.39s; }
+.rotating-title span:nth-child(15) { animation-delay: 0.42s; }
+
+/* Responzivnost (zadržava iste proporcije kao postojeći dizajn) */
+@media (max-width: 768px) {
+    .rotating-title {
+        font-size: 32px; /* Smanjena veličina za tablete */
+        padding: 0.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .rotating-title {
+        font-size: 24px; /* Smanjena veličina za mobilne */
+        padding: 0.3rem;
+    }
+}
+
+
+
            /* Stil za kontejner FORMA */
         .container {
             background: linear-gradient(135deg, #2c3e50, #34495e);
@@ -626,7 +698,7 @@
 
         <div style="margin-bottom: 50px;"></div>
 
-        <h3 style="display: block; font-size: 40px; color: #2c3e50; font-family: 'Poppins', sans-serif; font-weight: 500; margin: 0 auto; padding: 0.5rem; text-align: center;">cryptogorac.com</h3>
+       <h3 class="rotating-title">cryptogorac.com</h3>
 
         <div style="margin-bottom: 50px;"></div>
 
@@ -709,6 +781,19 @@
                 behavior: 'smooth'
             });
         });
+
+       document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('.rotating-title');
+        const text = title.textContent;
+        title.innerHTML = ''; // Briše originalni tekst
+        
+        // Razdvaja tekst na slova i dodaje ih u span-ove
+        text.split('').forEach(char => {
+            const span = document.createElement('span');
+            span.textContent = char === ' ' ? '\u00A0' : char; // Zadržava razmak
+            title.appendChild(span);
+        });
+    });
     </script>
 </body>
 </html>
