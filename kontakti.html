@@ -197,7 +197,7 @@
     width: 100%;
 }
 
-   /* Stil za naslov sa rotacijom */
+ /* Stil za naslov sa rotacijom */
 .rotating-title {
     display: block;
     font-size: 40px;
@@ -215,28 +215,30 @@
     display: inline-block;
     position: relative;
     transform-style: preserve-3d; /* Omogućava 3D rotaciju */
-    animation: spinLetter 4s infinite ease-in-out; /* Kontinuirana rotacija */
+    animation: spinLetterWithPause 6s infinite ease-in-out; /* Ukupno 6s: 4s rotacija + 2s pauza */
 }
 
-/* Animacija za 3D rotaciju slova */
-@keyframes spinLetter {
+/* Animacija za 3D rotaciju slova sa pauzom */
+@keyframes spinLetterWithPause {
     0% {
         transform: rotateY(0deg) rotateX(0deg); /* Početni položaj */
+        color: #2c3e50;
     }
-    25% {
-        transform: rotateY(180deg) rotateX(20deg); /* Rotacija u 3D */
-        color: #1abc9c; /* Promena boje za dinamiku */
-    }
-    50% {
-        transform: rotateY(360deg) rotateX(0deg); /* Puni krug */
-        color: #2c3e50; /* Vraća se na osnovnu boju */
-    }
-    75% {
-        transform: rotateY(180deg) rotateX(-20deg); /* Suprotna rotacija */
+    20% {
+        transform: rotateY(180deg) rotateX(20deg); /* Pola rotacije */
         color: #1abc9c;
     }
-    100% {
-        transform: rotateY(0deg) rotateX(0deg); /* Povratak na početak */
+    40% {
+        transform: rotateY(360deg) rotateX(0deg); /* Puni krug */
+        color: #2c3e50;
+    }
+    66.67% { /* 4s od 6s - kraj rotacije */
+        transform: rotateY(360deg) rotateX(0deg); /* Zadržava položaj za pauzu */
+        color: #2c3e50;
+    }
+    100% { /* 6s - kraj ciklusa, uključuje 2s pauze */
+        transform: rotateY(360deg) rotateX(0deg); /* Ostaje u mestu tokom pauze */
+        color: #2c3e50;
     }
 }
 
@@ -271,7 +273,6 @@
         padding: 0.3rem;
     }
 }
-
 
 
            /* Stil za kontejner FORMA */
@@ -788,7 +789,7 @@
             });
         });
 
-       document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () => {
         const title = document.querySelector('.rotating-title');
         const text = title.textContent;
         title.innerHTML = ''; // Briše originalni tekst
