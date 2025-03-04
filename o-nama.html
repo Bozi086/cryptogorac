@@ -667,6 +667,20 @@ main {
                 behavior: 'smooth'
             });
         });
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('.animated-title');
+        const text = title.textContent;
+        title.innerHTML = ''; // Briše originalni tekst
+        
+        // Razdvaja tekst na slova i dodaje ih u span-ove
+        text.split('').forEach(char => {
+            const span = document.createElement('span');
+            span.textContent = char === ' ' ? '\u00A0' : char; // Zadržava razmak
+            title.appendChild(span);
+        });
+    });
+
     </script>
 </body>
 </html>
