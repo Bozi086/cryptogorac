@@ -197,7 +197,7 @@
     width: 100%;
 }
 
-    /* Stil za naslov sa rotacijom */
+   /* Stil za naslov sa rotacijom */
 .rotating-title {
     display: block;
     font-size: 40px;
@@ -207,51 +207,57 @@
     margin: 0 auto;
     padding: 0.5rem;
     text-align: center;
+    perspective: 1000px; /* Dodaje 3D perspektivu */
 }
 
 /* Podešavanje za slova unutar naslova */
 .rotating-title span {
     display: inline-block;
     position: relative;
-    transition: transform 0.3s ease; /* Glatka tranzicija za rotaciju */
+    transform-style: preserve-3d; /* Omogućava 3D rotaciju */
+    animation: spinLetter 4s infinite ease-in-out; /* Kontinuirana rotacija */
 }
 
-/* Hover efekat - rotacija slova */
-.rotating-title:hover span {
-    animation: rotateLetter 0.6s ease forwards; /* Rotacija na hover */
-}
-
-/* Animacija za rotaciju slova */
-@keyframes rotateLetter {
+/* Animacija za 3D rotaciju slova */
+@keyframes spinLetter {
     0% {
-        transform: rotate(0deg);
+        transform: rotateY(0deg) rotateX(0deg); /* Početni položaj */
+    }
+    25% {
+        transform: rotateY(180deg) rotateX(20deg); /* Rotacija u 3D */
+        color: #1abc9c; /* Promena boje za dinamiku */
     }
     50% {
-        transform: rotate(12deg); /* Blaga rotacija udesno */
+        transform: rotateY(360deg) rotateX(0deg); /* Puni krug */
+        color: #2c3e50; /* Vraća se na osnovnu boju */
+    }
+    75% {
+        transform: rotateY(180deg) rotateX(-20deg); /* Suprotna rotacija */
+        color: #1abc9c;
     }
     100% {
-        transform: rotate(0deg); /* Vraća se na početni položaj */
+        transform: rotateY(0deg) rotateX(0deg); /* Povratak na početak */
     }
 }
 
 /* Podešavanje kašnjenja za svako slovo (cryptogorac.com ima 15 karaktera) */
 .rotating-title span:nth-child(1) { animation-delay: 0s; }
-.rotating-title span:nth-child(2) { animation-delay: 0.03s; }
-.rotating-title span:nth-child(3) { animation-delay: 0.06s; }
-.rotating-title span:nth-child(4) { animation-delay: 0.09s; }
-.rotating-title span:nth-child(5) { animation-delay: 0.12s; }
-.rotating-title span:nth-child(6) { animation-delay: 0.15s; }
-.rotating-title span:nth-child(7) { animation-delay: 0.18s; }
-.rotating-title span:nth-child(8) { animation-delay: 0.21s; }
-.rotating-title span:nth-child(9) { animation-delay: 0.24s; }
-.rotating-title span:nth-child(10) { animation-delay: 0.27s; }
-.rotating-title span:nth-child(11) { animation-delay: 0.30s; }
-.rotating-title span:nth-child(12) { animation-delay: 0.33s; }
-.rotating-title span:nth-child(13) { animation-delay: 0.36s; }
-.rotating-title span:nth-child(14) { animation-delay: 0.39s; }
-.rotating-title span:nth-child(15) { animation-delay: 0.42s; }
+.rotating-title span:nth-child(2) { animation-delay: 0.15s; }
+.rotating-title span:nth-child(3) { animation-delay: 0.3s; }
+.rotating-title span:nth-child(4) { animation-delay: 0.45s; }
+.rotating-title span:nth-child(5) { animation-delay: 0.6s; }
+.rotating-title span:nth-child(6) { animation-delay: 0.75s; }
+.rotating-title span:nth-child(7) { animation-delay: 0.9s; }
+.rotating-title span:nth-child(8) { animation-delay: 1.05s; }
+.rotating-title span:nth-child(9) { animation-delay: 1.2s; }
+.rotating-title span:nth-child(10) { animation-delay: 1.35s; }
+.rotating-title span:nth-child(11) { animation-delay: 1.5s; }
+.rotating-title span:nth-child(12) { animation-delay: 1.65s; }
+.rotating-title span:nth-child(13) { animation-delay: 1.8s; }
+.rotating-title span:nth-child(14) { animation-delay: 1.95s; }
+.rotating-title span:nth-child(15) { animation-delay: 2.1s; }
 
-/* Responzivnost (zadržava iste proporcije kao postojeći dizajn) */
+/* Responzivnost */
 @media (max-width: 768px) {
     .rotating-title {
         font-size: 32px; /* Smanjena veličina za tablete */
