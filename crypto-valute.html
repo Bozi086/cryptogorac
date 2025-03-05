@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="sr">
 <head>
@@ -651,141 +652,6 @@
 .btn-back-to-top.show {
     display: block; /* Prikazuje se kada se doda klasa 'show' */
 }
-
-    /* Poboljšani stil za text-ticker kontejner */
-    .text-ticker {
-        max-width: 1300px;
-        width: 95%;
-        margin: 2rem auto;
-        padding: 0; /* Uklonjen padding za bolji efekat */
-        background: linear-gradient(135deg, #f6f9fc, #ecf0f1);
-        border-radius: 15px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), 0 0 15px rgba(26, 188, 156, 0.4);
-        overflow: hidden;
-        position: relative;
-    }
-
-    /* Gradijent overlay za ivice - stvara efekat nestajanja */
-    .text-ticker::before, 
-    .text-ticker::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        height: 100%;
-        width: 80px;
-        z-index: 2;
-        pointer-events: none;
-    }
-
-    .text-ticker::before {
-        left: 0;
-        background: linear-gradient(to right, #f6f9fc, transparent);
-    }
-
-    .text-ticker::after {
-        right: 0;
-        background: linear-gradient(to left, #f6f9fc, transparent);
-    }
-
-    /* Kontejner za animirani tekst */
-    .text-ticker-inner {
-        padding: 20px;
-        position: relative;
-        overflow: hidden;
-        border: 2px solid #2ecc71;
-        border-radius: 15px;
-        background: rgba(255, 255, 255, 0.9);
-    }
-
-    /* Poboljšani stil za sadržaj text-ticker-a */
-    .text-ticker-content {
-        display: inline-block;
-        white-space: nowrap;
-        font-size: 21px;
-        color: #2c3e50;
-        animation: ticker 30s linear infinite;
-        padding: 5px 0;
-        text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Poboljšani stil za naglašeni tekst */
-    .text-ticker-content b {
-        color: #e74c3c;
-        font-weight: 700;
-        position: relative;
-        padding: 0 5px;
-    }
-
-    /* Dodaj efekat isticanja za naglašeni tekst */
-    .text-ticker-content b::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 3px;
-        background-color: #e74c3c;
-        animation: pulse 2s infinite;
-    }
-
-    /* Efekat pulsa za liniju ispod naglašenog teksta */
-    @keyframes pulse {
-        0% { opacity: 0.6; }
-        50% { opacity: 1; }
-        100% { opacity: 0.6; }
-    }
-
-    /* Poboljšana animacija za pomeranje teksta - sa desne ka levoj */
-    @keyframes ticker {
-        0% {
-            transform: translateX(100%);
-        }
-        100% {
-            transform: translateX(-100%);
-        }
-    }
-
-    /* Responzivnost */
-    @media (max-width: 768px) {
-        .text-ticker {
-            width: 90%;
-            margin: 1.5rem auto;
-        }
-
-        .text-ticker-inner {
-            padding: 15px;
-        }
-
-        .text-ticker-content {
-            font-size: 18px;
-            animation-duration: 25s;
-        }
-
-        .text-ticker::before, 
-        .text-ticker::after {
-            width: 40px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .text-ticker {
-            margin: 1rem auto;
-        }
-
-        .text-ticker-inner {
-            padding: 10px;
-        }
-
-        .text-ticker-content {
-            font-size: 16px;
-            animation-duration: 20s;
-        }
-
-        .text-ticker::before, 
-        .text-ticker::after {
-            width: 30px;
-        }
-    }
 </style>
 </head>
 <body>
@@ -846,15 +712,28 @@
 
            <div class="text-ticker">
         <div class="text-ticker-content">
-            Crypto edukacija - <b>Crypto VALUTE</b> - Kako Crna Gora nije u SEPA, nismo u mogućnosti da vam ponudimo digitalne verzije naših priručnika. Najavljeno je tokom maja ove godine da će to biti omogućeno. Do tada ćemo dijeliti po nama bitnije dijelove iz svake knjige sa svakom nadogradnjom sajta.
+            Crypto edukacija - <b>Crypto VALUTE</b> - Kako Crna Gora nepodržava SEPA transakcije, nismo u mogućnosti da vam ponudimo digitalne verzije naših priručnika. Najavljeno je tokom mjeseca maja ove godine da će to biti omogućeno. Do tada ćemo dijeliti po nama bitnije dijelove iz svake knjige sa svakom nadogradnjom sajta.
         </div>
     </div>
+<div class="spo-ikone">
+    <p>Uskoro na Apple Books i Google Books.</p>
+    <div class="store-icons">
+        <a href="https://books.apple.com/" target="_blank" class="store-link" title="Uskoro na Apple Books">
+            <i class="fab fa-apple"></i>
+        </a>
+        <a href="https://play.google.com/store/books" target="_blank" class="store-link" title="Uskoro na Google Books">
+            <i class="fab fa-google-play"></i>
+        </a>
+    </div>
+</div>
 
 
                       <div class="tekst-kontejner">
         <h2>Crypto VALUTE</h2>
-        <p>Knjiga ima sest poglavlja:</p>
-         <h2>uvod</h2>
+        <p>Priručnik ima VI poglavlja koja opisuju što su kriptovalute, kako su nastale, gdje i kako ih kupiti i skladištiti, koje su njihove namjene i projekcije za budućnost, kao i rečnik sa kripto izrazima i kripto slengovima.
+
+</p>
+         <h2>Uvod</h2>
 
         <p>Dobrodošli u svijet kriptovaluta, jednog od najuzbudljivijih i najdinamičnijih finansijskih tržišta današnjice. Možda ste već čuli za Bitcoin ili ste vidjeli vijesti o ljudima koji su ostvarili ogromne dobitke ulaganjem u digitalne valute, ali želite znati više. Ovaj priručnik pomoći će vam da razumijete suštinu kriptovaluta, kako ih koristiti, kako ih sigurno čuvati, te kako se pridržavati zakona i regulativa.
 Kriptovalute su revolucionarni koncept koji je promijenio način na koji ljudi razmišljaju o novcu, transakcijama i finansijskoj decentralizaciji. One su rezultat tehnoloških inovacija, uključujući blokčejn tehnologiju, koja je omogućila stvaranje digitalnih valuta koje su sigurne, transparentne i decentralizovane.
