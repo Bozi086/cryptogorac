@@ -243,65 +243,37 @@
         }
 
 
-       /* Stil za text-ticker kontejner */
+      /* Stil za text-ticker kontejner */
 .text-ticker {
     max-width: 1300px;
     width: 95%;
     margin: 2rem auto;
-    padding: 20px;
-    background: linear-gradient(135deg, #ffffff, #f5f7fa); /* Suptilni gradijent */
-    border: 3px solid #2ecc71;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 10px rgba(26, 188, 156, 0.6);
+    padding: 15px 20px; /* Smanjen padding za tanji izgled */
+    background: linear-gradient(135deg, #ffffff 0%, #ecf0f1 100%); /* Svetli gradijent za pozadinu */
+    border: 2px solid #2ecc71; /* Zelena granica */
+    border-left: 6px solid #1abc9c; /* Deblji akcenat sa leve strane */
+    border-radius: 8px; /* Blago zaobljeni uglovi */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1), 0 0 8px rgba(26, 188, 156, 0.4); /* Sofisticirana senka */
     overflow: hidden;
-    position: relative; /* Za pozicioniranje ukrasa */
-}
-
-/* Pseudo-elementi za dekoraciju */
-.text-ticker::before,
-.text-ticker::after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: #1abc9c; /* Zelena iz teme */
-    border-radius: 50%;
-    opacity: 0.8;
-    z-index: 1;
-}
-
-.text-ticker::before {
-    top: -10px;
-    left: -10px;
-    box-shadow: 0 0 10px rgba(26, 188, 156, 0.8);
-}
-
-.text-ticker::after {
-    bottom: -10px;
-    right: -10px;
-    box-shadow: 0 0 10px rgba(26, 188, 156, 0.8);
+    position: relative; /* Za pozicioniranje unutrašnjih elemenata */
 }
 
 /* Stil za sadržaj text-ticker-a */
 .text-ticker-content {
     display: inline-block;
     white-space: nowrap;
-    font-size: 21px;
-    color: #333;
-    animation: ticker 37s linear infinite;
-    padding-left: 100%; /* Da tekst krene sa desne strane */
-}
-
-/* Hover efekat za interaktivnost */
-.text-ticker:hover .text-ticker-content {
-    animation-play-state: paused; /* Pauzira animaciju na hover */
+    font-size: 20px; /* Malo smanjena veličina za eleganciju */
+    font-weight: 500; /* Srednja debljina za modernost */
+    color: #34495e; /* Tamnija boja iz navigacije */
+    animation: ticker 35s linear infinite; /* Glatka animacija */
+    padding-left: 100%; /* Počinje sa desne strane */
 }
 
 /* Boldirani deo */
 .text-ticker-content b {
-    color: #e67e22;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(230, 126, 34, 0.5); /* Blaga senka za naglašavanje */
+    color: #e67e22; /* Narandžasta iz teme */
+    font-weight: 700; /* Jači bold za kontrast */
+    letter-spacing: 0.5px; /* Suptilni razmak za čitljivost */
 }
 
 /* Animacija za pomeranje teksta */
@@ -314,13 +286,25 @@
     }
 }
 
+/* Suptilni akcenat u pozadini */
+.text-ticker::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #2ecc71, transparent); /* Zelena traka na vrhu */
+    opacity: 0.7;
+}
+
 /* Responzivnost */
 @media (max-width: 768px) {
     .text-ticker {
         width: 90%;
-        padding: 10px;
-        margin: 1.5rem auto;
-        border-width: 2px;
+        padding: 10px 15px;
+        border-left-width: 4px; /* Smanjen akcenat */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
     .text-ticker-content {
         font-size: 18px;
@@ -330,7 +314,7 @@
 
 @media (max-width: 480px) {
     .text-ticker {
-        padding: 8px;
+        padding: 8px 12px;
         margin: 1rem auto;
     }
     .text-ticker-content {
@@ -338,71 +322,6 @@
         animation-duration: 25s;
     }
 }
-
-        /* Stil za sadržaj text-ticker-a */
-       .text-ticker {
-            max-width: 1300px; /* Maksimalna širina u skladu s prethodnim kontejnerima */
-            width: 95%; /* Prilagođava se ekranu */
-            margin: 2rem auto; /* Centrirano */
-            padding: 20px; /* Unutrašnji razmak */
-            background-color: white;
-            border: 3px solid #2ecc71; /* Zeleni border kao u prethodnom primeru */
-            border-radius: 10px; /* Zaobljene ivice */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 10px rgba(26, 188, 156, 0.6); /* Senka u stilu sajta */
-            overflow: hidden; /* Sakriva tekst koji prelazi granice */
-        }
-
-        /* Stil za sadržaj text-ticker-a */
-        .text-ticker-content {
-            display: inline-block; /* Omogućava animaciju pomeranja */
-            white-space: nowrap; /* Tekst ostaje u jednoj liniji */
-            font-size: 21px; /* Veličina teksta */
-            color: #333; /* Tamno siva boja za osnovni tekst */
-            animation: ticker 37s linear infinite; /* Animacija pomeranja */
-        }
-
-        /* Boldirani deo */
-        .text-ticker-content b {
-            color: #e67e22; /* Narandžasta boja za naglašeni tekst */
-            font-weight: bold;
-        }
-
-        /* Animacija za pomeranje teksta - sa desne ka levoj */
-       @keyframes ticker {
-    0% {
-        transform: translateX(30%); /* Tekst počinje na vidljivom mestu */
-    }
-    100% {
-        transform: translateX(-100%); /* Završava van leve strane */
-    }
-}
-
-        /* Responzivnost */
-        @media (max-width: 768px) {
-            .text-ticker {
-                width: 90%;
-                padding: 10px; /* Smanjeni padding */
-                margin: 1.5rem auto;
-                border-width: 2px; /* Tanji border */
-            }
-
-            .text-ticker-content {
-                font-size: 18px; /* Smanjena veličina teksta */
-                animation-duration: 37s; /* Ubrzana animacija za manje ekrane */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .text-ticker {
-                padding: 8px;
-                margin: 1rem auto;
-            }
-
-            .text-ticker-content {
-                font-size: 16px; /* Još manji tekst */
-                animation-duration: 37s; /* Još brža animacija */
-            }
-        }
 
                 
 
