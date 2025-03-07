@@ -174,7 +174,7 @@
 .right-section .button {
     display: inline-block;
     padding: 12px 24px;
-    background: linear-gradient(135deg, #1abc9c, #34495e);
+    background: linear-gradient(135deg, #1abc9c, #34495e); /* Osnovni gradijent */
     color: #ecf0f1;
     font-size: 1.2rem;
     font-weight: 500;
@@ -185,14 +185,72 @@
     transition: all 0.3s ease;
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeInUp 1s ease forwards;
+    animation: fadeInUp 1s ease forwards, gradientShift 4s infinite ease-in-out; /* Dodata animacija gradijenta */
     text-align: center;
+    position: relative; /* Potrebno za sjaj */
+    overflow: hidden; /* Sakriva prelaz izvan granica */
 }
 
+/* Hover efekat */
 .right-section .button:hover {
-    background: #1abc9c; /* Changed to background instead of background-color to override the gradient */
+    box-shadow: 0 6px 20px rgba(26, 188, 156, 0.6); /* Jača sjena */
+    transform: translateY(-2px); /* Blagi podizanje */
 }
 
+/* Dodavanje sjajnog sloja */
+.right-section .button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0.7;
+    transform: translateX(-100%);
+    animation: shine 3s infinite ease-in-out; /* Sjaj se pomera */
+}
+
+/* Animacija za prelivanje boja */
+@keyframes gradientShift {
+    0% {
+        background: linear-gradient(135deg, #1abc9c, #34495e);
+    }
+    50% {
+        background: linear-gradient(135deg, #34495e, #1abc9c, #e74c3c); /* Dodatna boja za dinamiku */
+    }
+    100% {
+        background: linear-gradient(135deg, #1abc9c, #34495e);
+    }
+}
+
+/* Animacija za presijavanje */
+@keyframes shine {
+    0% {
+        transform: translateX(-100%);
+    }
+    20% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Postojeća animacija */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media querije */
 @media (max-width: 768px) {
     .main-container {
         flex-direction: column;
@@ -216,14 +274,6 @@
     .right-section .button {
         padding: 15px 30px;
         font-size: 16px;
-    }
-}
-
-/* Assuming this animation is defined somewhere in your CSS */
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
 
