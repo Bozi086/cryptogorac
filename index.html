@@ -1457,34 +1457,53 @@
             });
         });
 
-     const lines = document.querySelectorAll('.code-line');
+   function animateCode() {
+    const container = document.getElementById('codeContainer');
+    const lines = container.querySelectorAll('.code-line');
     let delay = 0;
 
-    lines.forEach((line, lineIndex) => {
-      const words = line.getAttribute('data-words').split(' ');
-      words.forEach((word, wordIndex) => {
-        const span = document.createElement('span');
-        span.className = 'word';
-        span.textContent = word;
-
-        // Dodavanje boja prema tipu reči
-        if (['class', 'constructor', 'return'].includes(word)) {
-          span.classList.add('keyword');
-        } else if (word.startsWith("'") || word.startsWith('"')) {
-          span.classList.add('string');
-        } else if (['this.name', 'this.project', 'this.status', 'this.website', 'this.teamSize'].includes(word)) {
-          span.classList.add('variable');
-        } else if (['=', '+'].includes(word)) {
-          span.classList.add('operator');
-        } else {
-          span.classList.add('default');
-        }
-
-        span.style.animationDelay = `${delay + wordIndex * 0.3}s`;
-        line.appendChild(span);
-      });
-      delay += words.length * 0.3 + 0.5; // Pauza između linija
+    // Resetujemo sve reči na opacity: 0
+    container.querySelectorAll('.word').forEach(word => {
+        word.style.opacity = '0';
+        word.style.animation = 'none'; // Uklanjamo prethodnu animaciju
     });
+
+    // Brišemo stare span elemente
+    lines.forEach(line => line.innerHTML = '');
+
+    // Ponovo kreiramo i animiramo reči
+    lines.forEach((line, lineIndex) => {
+        const words = line.getAttribute('data-words').split(' ');
+        words.forEach((word, wordIndex) => {
+            const span = document.createElement('span');
+            span.className = 'word';
+            span.textContent = word;
+
+            if (['class', 'constructor', 'return'].includes(word)) {
+                span.classList.add('keyword');
+            } else if (word.startsWith("'") || word.startsWith('"')) {
+                span.classList.add('string');
+            } else if (['this.name', 'this.project', 'this.status', 'this.website', 'this.teamSize'].includes(word)) {
+                span.classList.add('variable');
+            } else if (['=', '+'].includes(word)) {
+                span.classList.add('operator');
+            } else {
+                span.classList.add('default');
+            }
+
+            span.style.animationDelay = `${delay + wordIndex * 0.15}s`; // Smanjeno sa 0.3s na 0.15s
+            line.appendChild(span);
+        });
+        delay += words.length * 0.15 + 0.25; // Smanjena pauza između linija sa 0.5s na 0.25s
+    });
+
+    // Ukupno trajanje animacije + 3 sekunde pauze
+    const totalAnimationTime = delay * 1000 + 3000; // delay u milisekundama + 3 sekunde
+    setTimeout(animateCode, totalAnimationTime); // Ponavljanje nakon završetka
+}
+
+// Pokrećemo animaciju
+animateCode();
 
 
          const carousel = document.querySelector('.carousel');
