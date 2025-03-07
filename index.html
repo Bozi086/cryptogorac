@@ -348,39 +348,66 @@
         letter-spacing: -0.2px;
     }
 }
-/* kod simulacija */ 
-  .code-container {
-      width: 400px;
-      height: 300px;
-      background-color: #ffffff; /* Bela pozadina */
-      border: 2px solid #1abc9c;
-      border-radius: 10px;
-      padding: 20px;
-      font-family: 'Courier New', Courier, monospace;
-      overflow: hidden;
-      line-height: 1.5;
-    }
-    .code-line {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .word {
-      opacity: 0;
-      animation: typeIn 0.3s forwards;
-      margin-right: 5px;
-      font-weight: bold; /* Istaknuta slova za vidljivost */
-    }
-    @keyframes typeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    /* Različite boje za ključne reči */
-    .keyword { color: #e74c3c; } /* Crvena za ključne reči poput class, function */
-    .string { color: #27ae60; } /* Zelena za stringove */
-    .variable { color: #2980b9; } /* Plava za promenljive */
-    .operator { color: #8e44ad; } /* Ljubičasta za operatore */
-    .default { color: #2c3e50; } /* Tamno siva za ostalo */
+/* kod simulacija */
+.code-container {
+    width: 400px;
+    height: 300px;
+    background-color: #ffffff; /* Bela pozadina, u skladu sa main-container i about-container */
+    border: 3px solid #1abc9c; /* Granica kao kod contact-info i map-container */
+    border-radius: 15px; /* Zaobljenije ivice, kao kod about-container i crypto-container */
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+    line-height: 1.5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 10px rgba(26, 188, 156, 0.6); /* Senka slična tech-container i carousel-container */
+    margin: 2rem auto; /* Centriranje i razmak kao kod drugih kontejnera */
+    transition: all 0.3s ease; /* Glatka tranzicija kao kod contact-info */
+}
 
+.code-container:hover {
+    transform: translateY(-5px); /* Hover efekat kao kod about-container i crypto-container */
+    box-shadow: 0 8px 20px rgba(26, 188, 156, 0.4); /* Jača senka na hover, slično about-container */
+}
+
+.code-line {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.word {
+    opacity: 0;
+    animation: typeIn 0.3s forwards;
+    margin-right: 5px;
+    font-weight: bold; /* Istaknuta slova za vidljivost */
+}
+
+/* Animacija za pojavljivanje reči */
+@keyframes typeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Različite boje za ključne reči - usklađene sa sajnom paletom */
+.keyword { color: #e74c3c; } /* Crvena za ključne reči, zadržano */
+.string { color: #1abc9c; } /* Zelena iz palete sajta (#1abc9c) za stringove */
+.variable { color: #34495e; } /* Tamno plava iz gradijenata za promenljive */
+.operator { color: #8e44ad; } /* Ljubičasta zadržana za operatore */
+.default { color: #2c3e50; } /* Tamno siva iz palete sajta za ostalo */
+
+/* Responzivnost u skladu sa ostalim kontejnerima */
+@media (max-width: 768px) {
+    .code-container {
+        width: 90%; /* Prilagođava se ekranu kao crypto-container */
+        height: auto; /* Prilagođava visinu sadržaju */
+        padding: 15px; /* Smanjen padding kao kod drugih */
+    }
+}
+
+@media (max-width: 480px) {
+    .code-container {
+        padding: 10px; /* Još manji padding za male ekrane */
+    }
+}
 
 /* Services Container */
 .services-container {
