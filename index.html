@@ -348,6 +348,38 @@
         letter-spacing: -0.2px;
     }
 }
+/* kod simulacija */ 
+  .code-container {
+      width: 400px;
+      height: 300px;
+      background-color: #ffffff; /* Bela pozadina */
+      border: 2px solid #1abc9c;
+      border-radius: 10px;
+      padding: 20px;
+      font-family: 'Courier New', Courier, monospace;
+      overflow: hidden;
+      line-height: 1.5;
+    }
+    .code-line {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .word {
+      opacity: 0;
+      animation: typeIn 0.3s forwards;
+      margin-right: 5px;
+      font-weight: bold; /* Istaknuta slova za vidljivost */
+    }
+    @keyframes typeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    /* Različite boje za ključne reči */
+    .keyword { color: #e74c3c; } /* Crvena za ključne reči poput class, function */
+    .string { color: #27ae60; } /* Zelena za stringove */
+    .variable { color: #2980b9; } /* Plava za promenljive */
+    .operator { color: #8e44ad; } /* Ljubičasta za operatore */
+    .default { color: #2c3e50; } /* Tamno siva za ostalo */
 
 
 /* Services Container */
@@ -1205,7 +1237,21 @@
   <div style="width: 50px; height: 3px; background-color: #1abc9c; margin: 10px auto;"></div>
 </h1>
 
-          <div style="margin-bottom: 70px;"></div>
+          <div class="code-container" id="codeContainer">
+    <div class="code-line" data-words="class SoftwareStudio {"></div>
+    <div class="code-line" data-words="constructor(name, project) {"></div>
+    <div class="code-line" data-words="this.name = name;"></div>
+    <div class="code-line" data-words="this.project = project;"></div>
+    <div class="code-line" data-words="this.status = 'active';"></div>
+    <div class="code-line" data-words="this.website = 'CryptoGorac.com';"></div>
+    <div class="code-line" data-words="this.teamSize = 10;"></div>
+    <div class="code-line" data-words="}"></div>
+    <div class="code-line" data-words="develop() {"></div>
+    <div class="code-line" data-words="console.log('Building ' + this.project);"></div>
+    <div class="code-line" data-words="return 'CRYPTOGORAC.COM';"></div>
+    <div class="code-line" data-words="}"></div>
+    <div class="code-line" data-words="}"></div>
+  </div>
 
            <div class="services-container">
     <div class="service-item">
@@ -1385,6 +1431,36 @@
                 behavior: 'smooth'
             });
         });
+
+     const lines = document.querySelectorAll('.code-line');
+    let delay = 0;
+
+    lines.forEach((line, lineIndex) => {
+      const words = line.getAttribute('data-words').split(' ');
+      words.forEach((word, wordIndex) => {
+        const span = document.createElement('span');
+        span.className = 'word';
+        span.textContent = word;
+
+        // Dodavanje boja prema tipu reči
+        if (['class', 'constructor', 'return'].includes(word)) {
+          span.classList.add('keyword');
+        } else if (word.startsWith("'") || word.startsWith('"')) {
+          span.classList.add('string');
+        } else if (['this.name', 'this.project', 'this.status', 'this.website', 'this.teamSize'].includes(word)) {
+          span.classList.add('variable');
+        } else if (['=', '+'].includes(word)) {
+          span.classList.add('operator');
+        } else {
+          span.classList.add('default');
+        }
+
+        span.style.animationDelay = `${delay + wordIndex * 0.3}s`;
+        line.appendChild(span);
+      });
+      delay += words.length * 0.3 + 0.5; // Pauza između linija
+    });
+
 
          const carousel = document.querySelector('.carousel');
         const slides = carousel.querySelectorAll('a');
