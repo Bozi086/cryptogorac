@@ -1263,38 +1263,46 @@
   }
 }
 
-          /* Back-to-top */
-        .btn-back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, #2c3e50, #34495e);
-            color: #ecf0f1;
-            border: none;
-            border-radius: 50px;
-            padding: 10px 20px;
-            font-size: 1rem;
-            cursor: pointer;
-            display: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 10px #1abc9c, 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
+       /* Back-to-top */
+.btn-back-to-top {
+  position: fixed;
+  bottom: 20px; /* Udaljenost od donje strane */
+  left: 20px; /* Lijeva strana */
+  width: 40px; /* Fiksna širina za mali krug */
+  height: 40px; /* Fiksna visina za mali krug */
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: #ecf0f1;
+  border: none;
+  border-radius: 50%; /* Savršen krug */
+  font-size: 0.8rem; /* Smanjen font za kompaktnost */
+  cursor: pointer;
+  display: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #1abc9c, 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex; /* Koristi flexbox za centriranje */
+  justify-content: center; /* Centriranje vodoravno */
+  align-items: center; /* Centriranje vertikalno */
+}
 
-        .btn-back-to-top:hover {
-            background: #1abc9c;
-            transform: translateY(-3px);
-            box-shadow: 0 0 15px #1abc9c, 0 6px 16px rgba(0, 0, 0, 0.3);
-        }
+.btn-back-to-top:hover {
+  background: #1abc9c;
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px #1abc9c, 0 6px 16px rgba(0, 0, 0, 0.3);
+}
 
-        .btn-back-to-top.show {
-            display: block;
-        }
+.btn-back-to-top.show {
+  display: flex; /* Zadržava flex prikazivanju */
+}
 
-        /* Responzivnost */
-        @media (max-width: 768px) {
-            .navbar-brand img {
-                height: 30px;
-            }
+@media (max-width: 600px) {
+  .btn-back-to-top {
+    bottom: 10px;
+    left: 10px;
+    width: 35px; /* Smanjen za mobitele */
+    height: 35px; /* Smanjen za mobitele */
+    font-size: 0.7rem; /* Smanjen font */
+  }
+}
     </style>
 </head>
 <body>
