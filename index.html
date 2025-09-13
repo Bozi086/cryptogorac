@@ -1263,8 +1263,8 @@
   }
 }
 
-       /* Back-to-top */
- .btn-back-to-top {
+/* Back-to-top */
+.btn-back-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -1289,6 +1289,14 @@
 
 .btn-back-to-top.show {
     display: block; /* Prikazuje se kada se doda klasa 'show' */
+}
+
+/* Media upit za uređaje manje od 900px širine */
+@media only screen and (max-width: 900px) {
+    .btn-back-to-top {
+        right: auto; /* Uklanja desnu poziciju */
+        left: 20px; /* Postavlja dugme u levi donji ugao */
+    }
 }
     </style>
 </head>
