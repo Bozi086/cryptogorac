@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="sr">
 <head>
@@ -1229,41 +1230,7 @@
             }
         }
 
-/* Prilagođavanje Tawk.to widgeta */
-.tawk-button {
-  background-color: #00a651 !important; /* Zelena za dugme */
-  color: #ffffff !important;
-}
-.tawk-chat-panel {
-  background-color: #34495e !important; /* Tamno plava/sivkasta pozadina */
-  color: #ffffff !important;
-  border: 1px solid #00a651 !important; /* Zelena ivica */
-  border-radius: 8px !important;
-  width: 300px !important; /* Širina za desktop */
-  height: 400px !important; /* Visina za desktop */
-  max-width: 300px !important; /* Maksimalna širina */
-  max-height: 400px !important; /* Maksimalna visina */
-}
-.tawk-branding { /* Smanji vidljivost Tawk.to loga */
-  opacity: 0.7 !important;
-  background-color: #34495e !important;
-}
-
-/* Prilagođavanje za mobilne telefone (ekrani ispod 600px) */
-@media (max-width: 600px) {
-  .tawk-chat-panel {
-    width: 250px !important; /* Smanjena širina za mobilne */
-    height: 350px !important; /* Smanjena visina za mobilne */
-    max-width: 250px !important; /* Maksimalna širina na mobilnim */
-    max-height: 350px !important; /* Maksimalna visina na mobilnim */
-    font-size: 14px !important; /* Smanjen font za bolju čitljivost */
-  }
-  .tawk-button {
-    padding: 5px 10px !important; /* Smanjen padding za dugme na mobilnim */
-  }
-}
-
-/* Back-to-top */
+         /* Back-to-top */
 .btn-back-to-top {
     position: fixed;
     bottom: 20px;
@@ -1301,7 +1268,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top">
+   <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid nav-container">
             <a class="navbar-brand" href="index.html">
                 <img src="logo navi.jpg" alt="Logo">
@@ -1328,10 +1295,6 @@
                             <li><a class="dropdown-item" href="desktop-app.html">Izrada desk-top app</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="portfoli.html">Portfolio</a>
-                    </li>
-
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#kripto-edukacija" id="kriptoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Crypto edukacija
@@ -1408,6 +1371,10 @@
 </div>
 
 
+ <section class="tech-container">
+        <h2>Tehnologije i alati koje koristimo</h2>
+        <img src="tehnologija i servisi.jpg" alt="Tehnologije sajta" class="tech-image">
+    </section>
        <div class="code-container" id="codeContainer">
     <div class="code-line" data-words="class SoftwareStudio {"></div>
     <div class="code-line" data-words="constructor(name, project) {"></div>
@@ -1512,12 +1479,12 @@
               <div class="col-md-4 col-12 footer-section">
     <h5>Pratite nas</h5>
     <p>
-        <a href="https://fa-x-twitter.com/tvojprofil" target="_blank">
-            <i class="fab fa-x-twitter" style="font-size: 3em;"></i>
-        </a>|
-        <a href="https://instagram.com/tvojprofil" target="_blank">
-            <i class="fab fa-instagram" style="font-size: 3em;"></i>
-        </a>
+       <a href="https://x.com/cryptogorac" target="_blank">
+    <i class="fab fa-x-twitter" style="font-size: 3em;"></i>
+</a>|
+       <a href="https://www.instagram.com/cryptogorac/" target="_blank">
+    <i class="fab fa-instagram" style="font-size: 3em;"></i>
+</a>
     </p>
 </div>
                 <div class="col-md-4 col-12 footer-section">
@@ -1525,7 +1492,7 @@
                     <p>
                         <a href="index.html" class="footer-link">Početna</a> | 
                         <a href="o-nama.html" class="footer-link">O nama</a> | 
-                        <a href="portfolio.html" class="footer-link">Portfolio</a> |
+
                         <a href="kontakti.html" class="footer-link">Kontakti</a>
                     </p>
                 </div>
@@ -1541,127 +1508,116 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
+    <script>
+        const backToTopButton = document.getElementById('back-to-top');
+        const aboutContainer = document.querySelector('.about-container');
 
-  <script>
+        // Funkcija za proveru vidnog polja
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8
+            );
+        }
 
- 
-
-
-
-
-  // Back-to-top funkcionalnost
-  const backToTopButton = document.getElementById('back-to-top');
-  const aboutContainer = document.querySelector('.about-container');
-
-  // Provjera postojanja elemenata prije dodavanja događaja
-  if (backToTopButton && aboutContainer) {
-    // Funkcija za proveru vidnog polja
-    function isInViewport(element) {
-      const rect = element.getBoundingClientRect();
-      return (
-        rect.top >= 0 &&
-        rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8
-      );
-    }
-
-    // Skrolovanje
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
+        // Skrolovanje
+ window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
         backToTopButton.classList.add('show');
-      } else {
+    } else {
         backToTopButton.classList.remove('show');
-      }
-
-      if (isInViewport(aboutContainer)) {
+    }
+    if (aboutContainer && isInViewport(aboutContainer)) {
         aboutContainer.classList.add('visible');
-      }
-    });
+    }
+}, { passive: true });
 
-    // Provera pri učitavanju
-    window.addEventListener('load', () => {
-      if (isInViewport(aboutContainer)) {
-        aboutContainer.classList.add('visible');
-      }
-    });
+        // Provera pri učitavanju
+        window.addEventListener('load', () => {
+            if (aboutContainer && isInViewport(aboutContainer)) {
+                aboutContainer.classList.add('visible');
+            }
+        });
 
-    // Back-to-top klik
-    backToTopButton.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  }
+        // Back-to-top funkcionalnost
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
 
-  // Animacija koda
-  function animateCode() {
+    function animateCode() {
     const container = document.getElementById('codeContainer');
-    if (container) {
-      const lines = container.querySelectorAll('.code-line');
-      let delay = 0;
+    const lines = container.querySelectorAll('.code-line');
+    let delay = 0;
 
-      container.querySelectorAll('.word').forEach(word => {
+    // Resetujemo sve reči na opacity: 0
+    container.querySelectorAll('.word').forEach(word => {
         word.style.opacity = '0';
-        word.style.animation = 'none';
-      });
+        word.style.animation = 'none'; // Uklanjamo prethodnu animaciju
+    });
 
-      lines.forEach(line => line.innerHTML = '');
+    // Brišemo stare span elemente
+    lines.forEach(line => line.innerHTML = '');
 
-      lines.forEach((line, lineIndex) => {
+    // Ponovo kreiramo i animiramo reči
+    lines.forEach((line, lineIndex) => {
         const words = line.getAttribute('data-words').split(' ');
         words.forEach((word, wordIndex) => {
-          const span = document.createElement('span');
-          span.className = 'word';
-          span.textContent = word;
+            const span = document.createElement('span');
+            span.className = 'word';
+            span.textContent = word;
 
-          if (['class', 'constructor', 'return'].includes(word)) {
-            span.classList.add('keyword');
-          } else if (word.startsWith("'") || word.startsWith('"')) {
-            span.classList.add('string');
-          } else if (['this.name', 'this.project', 'this.status', 'this.website', 'this.teamSize'].includes(word)) {
-            span.classList.add('variable');
-          } else if (['=', '+'].includes(word)) {
-            span.classList.add('operator');
-          } else {
-            span.classList.add('default');
-          }
+            if (['class', 'constructor', 'return'].includes(word)) {
+                span.classList.add('keyword');
+            } else if (word.startsWith("'") || word.startsWith('"')) {
+                span.classList.add('string');
+            } else if (['this.name', 'this.project', 'this.status', 'this.website', 'this.teamSize'].includes(word)) {
+                span.classList.add('variable');
+            } else if (['=', '+'].includes(word)) {
+                span.classList.add('operator');
+            } else {
+                span.classList.add('default');
+            }
 
-          span.style.animationDelay = `${delay + wordIndex * 0.15}s`;
-          line.appendChild(span);
+            span.style.animationDelay = `${delay + wordIndex * 0.15}s`; // Smanjeno sa 0.3s na 0.15s
+            line.appendChild(span);
         });
-        delay += words.length * 0.15 + 0.25;
-      });
+        delay += words.length * 0.15 + 0.25; // Smanjena pauza između linija sa 0.5s na 0.25s
+    });
 
-      const totalAnimationTime = delay * 1000 + 3000;
-      setTimeout(animateCode, totalAnimationTime);
-    }
-  }
+    // Ukupno trajanje animacije + 3 sekunde pauze
+    const totalAnimationTime = delay * 1000 + 3000; // delay u milisekundama + 3 sekunde
+    setTimeout(animateCode, totalAnimationTime); // Ponavljanje nakon završetka
+}
 
-  // Pokretanje animacije
-  animateCode();
+// Pokrećemo animaciju
+animateCode();
 
-  // Karusel slika
-  const carousel = document.querySelector('.carousel');
-  const slides = carousel ? carousel.querySelectorAll('a') : [];
-  let currentIndex = 0;
+         const carousel = document.querySelector('.carousel');
+        const slides = carousel.querySelectorAll('a');
+        let currentIndex = 0;
 
-  if (slides.length > 0) {
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
-    }
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
 
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
-    }
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length; // Kruži kroz slike
+            showSlide(currentIndex);
+        }
 
-    showSlide(currentIndex);
-    setInterval(nextSlide, 2500);
-  }
+        // Prikaz prve slike na početku
+        showSlide(currentIndex);
 
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        // Automatsko menjanje slika svakih 2 sekunde
+        setInterval(nextSlide, 2500);
+
+                 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
 s1.async=true;
@@ -1671,6 +1627,8 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 
-</script>
+    </script>
 </body>
 </html>
+
+
