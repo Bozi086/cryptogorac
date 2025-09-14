@@ -1,14 +1,17 @@
+
+
 <!DOCTYPE html>
 <html lang="sr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tehnike-trejdovanja</title>
+    <title>Tehnike-trejdovanja CryptoGorac</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" type="image/png" href="logo-naviT.png">
     <style>
     * {
         box-sizing: border-box;
@@ -133,7 +136,7 @@
 
         /* Stil za kontejner Kripto Valute */
         .kripto-valute {
-            max-width: 1000px; /* Maksimalna širina */
+            max-width: 700px; /* Maksimalna širina */
             width: 95%; /* Prilagođava se ekranu */
             margin: 2rem auto; /* Centrirano sa razmakom odozgo */
             padding: 40px; /* Unutrašnji razmak */
@@ -152,8 +155,8 @@
         .kripto-valute img {
             max-width: 100%; /* Slika se prilagođava širini kontejnera */
             height: auto; /* Zadržava proporcije */
-            border-radius: 10px; /* Zaobljene ivice slike */
-            margin: 20px 0; /* Razmak iznad i ispod slike */
+            border-radius: 15px; /* Zaobljene ivice slike */
+            margin: 15px 0; /* Razmak iznad i ispod slike */
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Blaga senka na slici */
         }
 
@@ -185,11 +188,90 @@
             }
         }
 
+
+       /* Stil za text-ticker kontejner */
+          .text-ticker {
+            max-width: 1300px; /* Maksimalna širina u skladu s prethodnim kontejnerima */
+            width: 95%; /* Prilagođava se ekranu */
+            margin: 2rem auto; /* Centrirano */
+            padding: 20px; /* Unutrašnji razmak */
+            background-color: white;
+            border: 3px solid #2ecc71; /* Zeleni border kao u prethodnom primeru */
+            border-radius: 10px; /* Zaobljene ivice */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 10px rgba(26, 188, 156, 0.6); /* Senka u stilu sajta */
+            overflow: hidden; /* Sakriva tekst koji prelazi granice */
+        }
+
+        /* Stil za sadržaj text-ticker-a */
+       .text-ticker {
+            max-width: 1300px; /* Maksimalna širina u skladu s prethodnim kontejnerima */
+            width: 95%; /* Prilagođava se ekranu */
+            margin: 2rem auto; /* Centrirano */
+            padding: 20px; /* Unutrašnji razmak */
+            background-color: white;
+            border: 3px solid #2ecc71; /* Zeleni border kao u prethodnom primeru */
+            border-radius: 10px; /* Zaobljene ivice */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 10px rgba(26, 188, 156, 0.6); /* Senka u stilu sajta */
+            overflow: hidden; /* Sakriva tekst koji prelazi granice */
+        }
+
+        /* Stil za sadržaj text-ticker-a */
+        .text-ticker-content {
+            display: inline-block; /* Omogućava animaciju pomeranja */
+            white-space: nowrap; /* Tekst ostaje u jednoj liniji */
+            font-size: 21px; /* Veličina teksta */
+            color: #333; /* Tamno siva boja za osnovni tekst */
+            animation: ticker 37s linear infinite; /* Animacija pomeranja */
+        }
+
+        /* Boldirani deo */
+        .text-ticker-content b {
+            color: #1abc9c; /* zelena boja za naglašeni tekst */
+            font-weight: bold;
+        }
+
+        /* Animacija za pomeranje teksta - sa desne ka levoj */
+       @keyframes ticker {
+    0% {
+        transform: translateX(30%); /* Tekst počinje na vidljivom mestu */
+    }
+    100% {
+        transform: translateX(-100%); /* Završava van leve strane */
+    }
+}
+
+        /* Responzivnost */
+        @media (max-width: 768px) {
+            .text-ticker {
+                width: 90%;
+                padding: 10px; /* Smanjeni padding */
+                margin: 1.5rem auto;
+                border-width: 2px; /* Tanji border */
+            }
+
+            .text-ticker-content {
+                font-size: 18px; /* Smanjena veličina teksta */
+                animation-duration: 37s; /* Ubrzana animacija za manje ekrane */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .text-ticker {
+                padding: 8px;
+                margin: 1rem auto;
+            }
+
+            .text-ticker-content {
+                font-size: 16px; /* Još manji tekst */
+                animation-duration: 37s; /* Još brža animacija */
+            }
+        }
+
                 
 
-                  /* Stil za tekst kontejner */
-        .tekst-kontejner {
-    max-width: 800px; /* Maksimalna širina */
+                                 /* Stil za tekst kontejner */
+       .tekst-kontejner {
+    max-width: 1000px; /* Maksimalna širina */
     width: 95%; /* Prilagođava se ekranu */
     margin: 2rem auto; /* Centrirano sa razmakom odozgo */
     padding: 40px; /* Unutrašnji razmak */
@@ -203,7 +285,7 @@
 /* Stil za naslov */
 .tekst-kontejner h2 {
     font-size: 36px; /* Veliki naslov */
-    color: red; /* Crvena boja */
+    color: #1abc9c; /* zelena */
     margin-bottom: 20px;
 }
 .tekst-kontejner p {
@@ -218,13 +300,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 50px; /* Razmak između ikonica */
+    gap: 60px; /* Razmak između ikonica */
     margin-top: 20px; /* Razmak od naslova */
 }
 
 /* Stil za linkove sa ikonama */
 .tekst-kontejner .store-link {
-    font-size: 2.8rem; /* Veličina ikonica */
+    font-size: 2.9rem; /* Veličina ikonica */
     color: #333; /* Osnovna boja ikonica, usklađena sa tekstom */
     text-decoration: none; /* Bez podvlačenja */
     transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Prelazi usklađeni sa temom */
@@ -279,8 +361,6 @@
         gap: 15px; /* Još manji razmak između ikonica */
     }
 }
-
-
 
 
 
@@ -514,7 +594,7 @@
 
     <main>
 
-       <div style="margin-bottom: 50px;"></div>
+        <div style="margin-bottom: 50px;"></div>
        
 
           <div class="kripto-valute">
@@ -522,22 +602,132 @@
         <img src="trejdovanje.jpg" alt="tehnike trejdovanja Slika">
     </div>
 
-                  
+                <div class="text-ticker">
+        <div class="text-ticker-content">
+            Tehnike trejdovanja - <b>CryptoGorac.cmo</b> -Zapratite, lajkujte, tagujte dva prijatelja na X-u i Instagramu – učite uz priručnik i osvojite nagradu! Igra kreće 1. oktobra i traje do 1. novembra!
 
-     <div class="tekst-kontejner">
+
+ 
+        </div>
+    </div>     
+
+             <div class="tekst-kontejner">
     <h2>Tehnike trejdovanja</h2>
- <p>Uskoro na Apple-Books i Google-Books </p>
-    <div class="store-icons">
-        <a href="https://books.apple.com/" target="_blank" class="store-link" title="Uskoro na Apple Books">
-            <i class="fab fa-apple"></i>
-        </a>
-        <a href="https://play.google.com/store/books" target="_blank" class="store-link" title="Uskoro na Google Books">
-            <i class="fab fa-google-play"></i>
-        </a>
+ <p>Priručnike možete naručiti odmah putem društvenih mreža.</p>
+  <div class="store-icons">
+       <a href="https://x.com/cryptogorac" target="_blank" class="store-link" title="Visit us on X">
+    <i class="fab fa-x-twitter"></i>
+</a>
+<a href="https://www.instagram.com/cryptogorac/" target="_blank" class="store-link" title="Visit us on Instagram">
+    <i class="fab fa-instagram"></i>
+</a>
       
     </div>
 </div>
 
+
+ <div class="tekst-kontejner">
+        <h2>Tehnike trejdovanja</h2>
+
+        <h2>Uvod</h2>
+Dobrodošli u priručnik “Tehnike trejdovanja, CRYPYOGORAC ”. U svetu digitalnih valuta, trejdovanje kriptovalutama postaje sve popularnije i privlači pažnju kako iskusnih investitora, tako i onih koji tek ulaze u svet finansija. <br>
+
+
+        <h2>Analiza tržista</h2>
+
+        <p>Fundamentalna analiza<br>
+            Fundamentalna analiza je metodologija koja se koristi za procenu stvarne vrednosti finansijskog instrumenta, kao što su akcije, obveznice ili kriptovalute, na osnovu analize ekonomskih, finansijskih i drugih kvalitativnih i kvantitativnih faktora. Evo kako se fundamentalna analiza primenjuje u kontekstu trejdovanja kriptovalutama:
+            <br>1.Analiza tima i celnih ljudi
+Iskustvo i stručnost: Proverite relevantno iskustvo i stručnost članova tima. Da li su radili na sličnim projektima? Da li imaju uspešne projekte iza sebe, koliko su cijenjeni u kripto zajednici!?
+Prisustvo na mrežama: Aktivnost na poslovnim mrežama kao što su LinkedIn i X-nekadasnji Tweeter može pružiti uvid u angažman tima u zajednici i tehnologiji (pazljivo provjeriti ispravnost naloga-profila).<br>
+
+2.Whitepaper i poslovni planovi
+Whitepaper: Ovo je dokument koji detaljno opisuje projekat, njegovu svrhu, tehnologiju, plan razvoja i način na koji će rešiti određeni problem. Kvalitetan whitepaper je ključan za procenu ozbiljnosti projekta.
+Poslovni plan: Analizirajte poslovni plan projekta. Da li je realan i ostvariv? Da li su ciljevi jasno definisani? <br>
+
+3.Tehnologija i inovacije
+Tehnološka osnova: Procenite tehnologiju koja stoji iza kriptovalute. Da li je inovativna? Da li rešava stvarne probleme? I kako na nju gledaju i komentarisu strucnjaci.
+Razvojni tim: Da li tim ima dovoljno stručnjaka za razvoj i održavanje tehnologije? Da li su planovi za razvoj jasno definisani?<br>
+
+4.Tržišni potencijal i konkurencija
+Ciljno tržište: Procenite veličinu i potencijal ciljnog tržišta. Da li postoji stvarna potreba za rešenjem koje projekat nudi?
+Konkurencija: Analizirajte konkurenciju. Da li postoje slični projekti? Kako se vaš projekat razlikuje i koje su njegove prednostiu I mane u odnosu na konkurenciju.<br>
+
+5.Tokenomika
+Distribucija tokena: Proverite kako su tokeni distribuirani. Da li postoji ravnoteža između tokena namenjenih timu, investitorima i zajednici? Takodjei kompletan broj tokena je jako bitan, sama cinjenica da proekat koji ima 50 milijardi tokena , mora da bi dostigao cijenu tokena od jedan dolar, imati ulozeno u taj proekat 50 milijardi dolara,sto kod projekta od 1 milijardu tokena u koliko bi uslo 50 milijardi dolara , cijena tokena bi iznosila 50 dolara. Medjutim to nemora da bude sustina.
+Upotreba tokena: Razumite svrhu i upotrebu tokena unutar ekosistema. Da li token ima stvarnu vrednost i korisnost?<br>
+
+6.Zajednica i podrška
+Aktivnost zajednice: Procenite aktivnost i angažovanost zajednice oko projekta. Aktivna i podržavajuća zajednica može biti dobar indikator uspeha. Kao i partnera van kripto zajednice.
+Podrška i partnerstva: Da li projekat ima podršku poznatih investitora ili partnerstva sa drugim relevantnim projektima?<br>
+
+7.Regulativa i pravna pitanja
+Regulatorni okvir: Proverite da li projekat ispunjava sve relevantne regulatorne zahteve. Da li postoje pravni rizici koji bi mogli uticati na projekat?
+Poreske obaveze: Razumite poreske obaveze vezane za trejdovanje i držanje kriptovaluta.<br>
+
+8.Finansijski izveštaji i iransparentnost
+finansijska stabilnost: Procenite finansijsku stabilnost projekta. Da li ima dovoljno sredstava za realizaciju svojih ciljeva!?
+Transparentnost: Da li projekat redovno objavljuje izveštaje i informacije o napretku?<br>Transparentnost je ključna za poverenje investitora.
+Fundamentalna analiza zahteva detaljno istraživanje i razumevanje svih aspekata projekta. Cilj je da se proceni dugoročni potencijal kriptovalute i donesu informisane odluke o investiranju i trejdovanju.
+
+</p>
+        
+     
+     <h2>Tehnicka analiza</h2>
+
+     <p>Tehnička analiza je metodologija koja se koristi za procenu investicionih prilika kroz analizu istorijskih podataka o cenama i obimu trgovanja. Evo kako se tehnička analiza primenjuje u kontekstu nama potrebnog trejdovanja kriptovalutama:<br>
+
+Trendovi i obrasci<br>
+Trendovi: Identifikacija dugoročnih (bullish - rastući, bearish - padajući) i kratkoročnih trendova.
+Obrasci: Prepoznavanje obrazaca kao što su “glava i ramena” (head and shoulders), dvostruki vrh (double top), trokut (triangle), itd. Ovi obrasci mogu signalizirati potencijalne promene u trendu.<br>
+Tehnički indikatori<br>
+Pokretni proseci (Moving Averages): Prosečna cena kriptovalute tokom određenog perioda. Najčešće korišćeni su SMA (Simple Moving Average) i EMA (Exponential Moving Average).
+Indeks relativne snage (RSI): Mera brzine i promene cena. Vrednosti iznad 70 ukazuju na prekupljenost, dok vrednosti ispod 30 ukazuju na preprodanost.
+MACD (Moving Average Convergence Divergence): Kombinacija pokretnih proseka koja pomaže u identifikaciji promena u snazi, pravcu, momentumu i trajanju trenda.
+Bollinger bands: Prikazuju volatilnost tržišta. Sastoje se od srednjeg pokretnog proseka i dve linije koje su standardna devijacija iznad i ispod tog proseka.<br>
+Podrška i otpor (Support and Resistance)<br>
+Podrška: Nivo cene na kojem se očekuje da će potražnja biti dovoljno jaka da spreči dalji pad cijene.
+Otpor: Nivo cene na kojem se očekuje da će prodaja biti dovoljno jaka da spreči dalji rast cijene.
+<br>
+Volumen trgovanja<br>
+Volumen: Količina kriptovalute koja se trguje u određenom vremenskom periodu. Visok volumen može ukazivati na snažan trend, dok nizak volumen može ukazivati na slabost trenda.<br>
+Analiza sveća (Candlestick Patterns)<br>
+Bullish engulfing: Signalizira potencijalni preokret u rastući trend.
+Bearish engulfing: Signalizira potencijalni preokret u padajući trend.
+Doji: Indikator neodlučnosti na tržištu, može signalizirati preokret trenda.<br>
+Alati za tehničku analizu<br>
+TradingView: Popularna platforma za tehničku analizu koja nudi širok spektar alata i indikatora.
+Coinigy: Platforma specijalizovana za kriptovalute koja omogućava analizu i trgovanje na više berzi.
+Tehnička analiza je veoma korisna za kratkoročne trejdere jer omogućava identifikaciju potencijalnih ulaznih i izlaznih tačaka na tržištu. Međutim, važno je kombinovati je sa fundamentalnom analizom, ali i sa drugim tehnikama kako biste dobili jasniju sliku o tržištu.
+
+</p>
+
+   <h2>Sentimentalma analiza</h2>
+
+   <p>Sentimentalna analiza ili analiza sentimenta je metoda koja se koristi za procenu opšteg raspoloženja ili stava investitora prema određenoj kriptovaluti ili tržištu u cjelini. Ova analiza se oslanja na prikupljanje i analizu podataka iz različitih izvora, kao što su društvene mreže, forumi, vesti i drugi mediji, kako bi se utvrdilo da li je sentiment pozitivan, negativan ili neutralan. Evo kako se sentimentalna analiza primenjuje u kontekstu kriptovaluta:<br>
+    Ključni aspekti sentimentalne analize<br>
+Izvori podataka:
+Društvene mreže: Twitter, Reddit, Telegram i drugi forumi gde se diskutuje o kriptovalutama.
+Vesti i članci: Analiza naslova i sadržaja članaka o kriptovalutama.
+Komentari i recenzije: Mišljenja korisnika na različitim platformama.
+Alati i tehnike:
+Analiza teksta: Korišćenje algoritama za obradu prirodnog jezika (NLP) za analizu tonova i emocija u tekstovima.
+Sentiment score: Kvantifikacija sentimenta u numeričkom obliku, gde se pozitivni, negativni i neutralni komentari ocenjuju i sumiraju.
+Primena:
+Predviđanje cena: Pozitivan sentiment može ukazivati na potencijalni rast cene, dok negativan sentiment može ukazivati na pad.
+Identifikacija trendova: Praćenje promena u sentimentu može pomoći u identifikaciji novih trendova ili promena na tržištu.<br>
+
+Prednosti i ograničenja<br>
+Prednosti:<br>
+Brza reakcija: Omogućava brzo reagovanje na promene u raspoloženju tržišta.
+Dodatni uvidi: Pruža dodatne informacije koje nisu dostupne kroz tehničku ili fundamentalnu analizu.<br>
+Ograničenja:<br>
+Subjektivnost: Sentiment može biti subjektivan i podložan manipulaciji.
+Lažne informacije: Prisustvo lažnih vesti i dezinformacija može uticati na tačnost analize.
+Sentimentalna analiza je korisna alatka koja, kada se koristi zajedno sa tehničkom i fundamentalnom analizom, može pružiti sveobuhvatan uvid u tržište kriptovaluta.<br>
+ Licno sam tokom 2018.god bio izmanipulisan laznim vijestima i to od jednog do tada prilicno pozdanog i pouzdanog portala u svijetu kripta. Takodje jednom prilikom pocetkom 2019.god. sam neprovjeravajuci Twitter nalog , danasnji X  povjerovao u prevaru koja me je kostala gubitka znacajne kolicine sredstava, upravo sto sam usao prebrzo u jedan proekat i  pokusao da se prikljucim na stednju (stake) sa enornim kamatama. Tako da je mnogo bitno strpljivo provjeriti i istraziti gdje i na koji nacin ulazete vasa sredstava!<br>
+Ovo su neki od dijelova iz našeg priručnika za tehnike trejdovanja od autora:<br> Miloš Božović CEO cryptogorac.com . 
+</p>
 
 
 
@@ -555,12 +745,12 @@
               <div class="col-md-4 col-12 footer-section">
     <h5>Pratite nas</h5>
     <p>
-        <a href="https://fa-x-twitter.com/tvojprofil" target="_blank">
-            <i class="fab fa-x-twitter" style="font-size: 3em;"></i>
-        </a>|
-        <a href="https://instagram.com/tvojprofil" target="_blank">
-            <i class="fab fa-instagram" style="font-size: 3em;"></i>
-        </a>
+        <a href="https://x.com/cryptogorac" target="_blank">
+    <i class="fab fa-x-twitter" style="font-size: 3em;"></i>
+</a>|
+        <a href="https://www.instagram.com/cryptogorac/" target="_blank">
+    <i class="fab fa-instagram" style="font-size: 3em;"></i>
+</a>
     </p>
 </div>
                 <div class="col-md-4 col-12 footer-section">
@@ -602,3 +792,14 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
